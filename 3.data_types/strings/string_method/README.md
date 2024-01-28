@@ -266,21 +266,6 @@ print(a.islower())
 print(b.islower())
 print(c.islower())
 ```
-## islower
-* The islower() method returns True if all the characters are in lower case, otherwise False.
-* Numbers, symbols and spaces are not checked, only alphabet characters.
-> Syntax
->
->*string.islower()*
-```python
-a = "Hello world!"
-b = "hello 123"
-c = "mynameisPeter"
-
-print(a.islower())
-print(b.islower())
-print(c.islower())
-```
 ## isnumeric
 * The isnumeric() method returns True if all the characters are numeric (0-9), otherwise False.
 * Exponents, like ² and ¾ are also considered to be numeric values.
