@@ -11,3 +11,15 @@ Comparison operators are used to compare two values:
 | <        | Less than          | x < y   |
 | >=       | Greater than equal | x >= y  |
 | <=       | Less than Equal    | x <= y  |
+
+```python
+x = 5
+y = 3
+
+print(x == y)
+print(x != y)
+print(x > y)
+print(x < y)
+print(x >= y)
+print(x <= y)
+```
