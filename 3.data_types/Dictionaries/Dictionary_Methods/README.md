@@ -1,4 +1,4 @@
-# Dictionary Metho
+# Dictionary Methods
 
 ---
 ## clear
