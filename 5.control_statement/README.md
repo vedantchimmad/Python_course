@@ -6,7 +6,6 @@
 **There are two type of control flow statements**
 
 1. Decision-making Statements
-
    * Decision making statements are used in the Python programs to make them able to decide which of the alternative group of instructions to be executed, depending on value of a certain Boolean expression.
    * Python provides **if..elif..else** control statements as a part of decision marking.
    * Python supports **Match-Case** statement, which can also be used as a part of decision making.
