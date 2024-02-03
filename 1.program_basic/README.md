@@ -30,6 +30,7 @@ Python is high level,general-purpose,object oriented, simple,dynamic programming
 * Object-oriented approach
 * Highly portable
 * Large standard library 
+* dynamically-typed
 
 ## Python Indentation
 * space at the beginning of a code line 
