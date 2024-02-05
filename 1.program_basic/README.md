@@ -66,3 +66,14 @@ Python is high level,general-purpose,object oriented, simple,dynamic programming
   >[!NOTE]
   >
   > Since python will ignore string literals that are not assigned to a variable
+# User Input
+
+---
+* In python we can ask the user for input.
+
+* uses the `input()` method.
+```python
+username = input("Enter username:")
+print("Username is: " + username)
+```
+* Python stops executing when it comes to the input() function, and continues when the user has given some input.
