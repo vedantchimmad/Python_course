@@ -2,9 +2,9 @@
 
 ---
 
-* Variables are containers to storing data 
+* Variables are containers to stor data 
 * python has no command for declaring the variables
-* Variable is created the moment you assign a value to it
+* Variable is created the moment assign a value to it
 
 ## Casting
 If you want to store the data type that can be done using casting
