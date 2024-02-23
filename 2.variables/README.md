@@ -13,6 +13,14 @@ x = str(3)  # x will be'3'
 y = int(3)  # y will be 3
 z = float(3) # z will be 3.0
 ```
+## Memory address
+* Python everything will treated as object
+* To return address of object use `id()`
+```python
+a= 10
+
+print(id(a))
+```
 ## variable names
 A variable can be short name(like x and y) or more descriptive name (age,carname etc)
 * A variable name must start with later or _ character
