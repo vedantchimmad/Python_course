@@ -78,7 +78,11 @@ Netherland.
 Reserved words in python Language that can not be used as a variable name, function name, or any other identifier.
 
 Example : and, as, or, false etc
+```python
+import keyword
 
+print(keyword.kwlist)
+```
 
 # User Input
 
