@@ -12,7 +12,15 @@ Program is a sequence of instruction telling a computer what to do
 Process of creating software is called programming
 
 ## What is Python
-Python is high level,general-purpose,object oriented, simple,dynamic programming language
+Python is high level,general-purpose,object oriented, simple,dynamic type programming language
+
+## History
+The implementation of Python was started in the December 1989 by Guido Van Rossum at CWI in
+Netherland.
+* In February 1991, van Rossum published the code (labeled version 0.9.0).
+* In 1994, Python 1.0 was released with new features like: lambda, map, filter, and reduce.
+* Python 2.0 added new features like: list comprehensions, garbage collection system.
+* On December 3, 2008, Python 3.0 (also called "Py3K") was released.
 
 ## What can python do
 * TO create desktop application
@@ -62,10 +70,16 @@ Python is high level,general-purpose,object oriented, simple,dynamic programming
   '''
   print("Hello world!")
   ```
-  
+
   >[!NOTE]
   >
   > Since python will ignore string literals that are not assigned to a variable
+## keywords
+Reserved words in python Language that can not be used as a variable name, function name, or any other identifier.
+
+Example : and, as, or, false etc
+
+
 # User Input
 
 ---
