@@ -26,7 +26,26 @@ my_function("Linus")
 > 
 > * An argument is the value that is sent to the function when it is called.
 > * parameter is the variable listed inside the parentheses in the function definition.
+## Positional Arguments
+* Passing a positional aruguments while calling a function
+```python
+def passing_number(a, b):
+    add=a+b
 
+passing_number(5,6)
+```
+>[!NOTE]
+>
+> Always pass positional arguments first while calling a function
+## Keyword Arguments
+* You can also send arguments with the key = value syntax.
+* This way the order of the arguments does not matter.
+```python
+def my_function(child3, child2, child1):
+  print("The youngest child is " + child3)
+
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+```
 ## Number of Arguments
 * By default, a function must be called with the correct number of arguments.
   ```python
@@ -43,15 +62,6 @@ def my_function(*kids):
   print("The youngest child is " + kids[2])
 
 my_function("Emil", "Tobias", "Linus")
-```
-## Keyword Arguments
-* You can also send arguments with the key = value syntax.
-* This way the order of the arguments does not matter.
-```python
-def my_function(child3, child2, child1):
-  print("The youngest child is " + child3)
-
-my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
 ```
 ## Arbitrary Keyword Arguments, **kwargs
 * If you do not know how many keyword arguments that will be passed into your function, add two asterisk: `**` before the parameter name in the function definition.
