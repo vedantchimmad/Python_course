@@ -1,9 +1,10 @@
 # Class and Object
 
 ---
-Almost everything in Python is an object, with its properties and methods.
-
-A Class is like an object constructor, or a "blueprint" for creating objects.
+* A Class is a "blueprint" for creating objects.
+* Class contains collection of variables(attributes) & methods(behavior)
+* Class is a Logical entity
+* Class Does not occupy space in the memory
 
 ### Create a Class
 To create a class, use the keyword `class`
@@ -12,13 +13,20 @@ class MyClass:
   x = 5
 ```
 ### Create Object
-Now we can use the class named MyClass to create objects.
+* Now we can use the class named MyClass to create objects.
+* object is an instance of class
+* Object is a Physical entity
+* Occupy certain amount space in the memory
+* For one class, we can create multiple objects.
+
 ```python
 p1 = MyClass()
 print(p1.x)
 ```
 ### The __init__() Function
-All classes have a function called __init__(), which is always executed when the class is being initiated.
+* All classes have a function called __init__(), which is always executed when the class is being initiated.
+* `__init__()` is called as constructor
+* constructor will not return any value
 ```python
 class Person:
   def __init__(self, name, age):
@@ -102,4 +110,60 @@ del p1
 ```python
 class Person:
   pass
+```
+## Methods
+* Functions are created inside a class
+### Types of methods
+1. Instance Methods
+2. Static Methods
+
+### 1.Instance Methods
+* Methods are called only through object
+```python
+class MyClass:
+    def myfun(self):
+        pass
+    def display(self,name):
+        print(name)
+
+mc1=MyClass()
+mc1.myfun()
+mc1.display("Vedant")
+```
+### 2.Static Methods
+* Methods are called directly using class
+```python
+class MyClass:
+    def m1(self):
+        print("this is instance method...")
+    @staticmethod
+    def m2(self,num):
+        print(self,num)
+
+mc=MyClass()
+mc.m1()
+#calling Static method through object required additional arguments
+mc.m2(50,200) 
+
+MyClass.m2(10,20)
+```
+## Class Variable
+* Variable accessed within the class is called as class Variable
+* Access class variable using class instance
+```python
+ # global variables
+a,b=15,25  
+class MyClass:
+    # class variables
+    a,b=10,20  
+    def add(self,a,b):
+        # local varaibles
+        print(a+b)
+        # class variables
+        print(self.a+self.b)
+        # global variables
+        print(globals()['a']+globals()['b'])  
+
+mc=MyClass()
+mc.add(100,200)
 ```
