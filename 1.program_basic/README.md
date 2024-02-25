@@ -12,7 +12,7 @@ Program is a sequence of instruction telling a computer what to do
 Process of creating software is called programming
 
 ## What is Python
-Python is high level,general-purpose,object oriented, simple,dynamic type programming language
+Python is high level,general-purpose,Structure and object-oriented, simple,dynamic type programming language
 
 ## History
 The implementation of Python was started in the December 1989 by Guido Van Rossum at CWI in
