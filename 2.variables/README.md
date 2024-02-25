@@ -1,7 +1,6 @@
 # Variables
 
 ---
-
 * Variables are containers to stor data 
 * python has no command for declaring the variables
 * Variable is created the moment assign a value to it
@@ -111,7 +110,28 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
   
   myfunc()
   ```
-* Global keyword
+* Class Variable
+  * Variable created inside th class
+  * Can't be used outside the class
+```python
+# global variables
+i,j=15,25   
+class MyClass:
+    # class variables
+    a,b=10,20   
+    def add(self,x,y):
+        #x, y are local variables
+        print(x+y)
+
+        # a, b are class variables
+        print(self.a+self.b)
+        # i, j are global variables
+        print(i+j)   
+
+mc=MyClass()
+mc.add(100,200)
+```
+## Global keyword
   * used to make local variable to global variable
   ```python
   def myfunc():
