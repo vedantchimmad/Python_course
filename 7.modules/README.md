@@ -3,7 +3,7 @@
 ---
 ### What is a Module?
 * Consider a module to be the same as a code library.
-* A module is a file containing definition of functions, classes, variables, constants or any other Python object. 
+* A module is a Collection of functions, classes, variables, constants or any other Python object. 
 
 ### Create a Module
 To create a module just save the code you want in a file with the file extension `.py`.
@@ -102,4 +102,28 @@ def sum(x,y):
 
 if __name__ == "__main__":
    print ("sum:",sum(10,20))
+```
+## Import classes in Module
+```python
+# A module
+class Morning:
+   def greet(self):
+       print("Hello Good morning from A")
+```
+```python
+# B Module
+class Afternoon:
+    def greet(self):
+      print("Hello Good Afternoon from B")
+```
+```python
+# Collection of AB module
+import A
+import B 
+
+obj1 = A.Morning()
+obj1.greet()
+
+obj2=B.Afternoon()
+obj2.greet()
 ```
