@@ -1,12 +1,13 @@
 # Variables
 
 ---
-* Variables are containers to stor data 
+* Variables are containers to store data 
 * python has no command for declaring the variables
-* Variable is created the moment assign a value to it
+* Variable is created the moment assign a value to it so it is called dynamically typed 
 
 ## Casting
-If you want to store the data type that can be done using casting
+* Covert one data from one form to another 
+* If you want to store the data type that can be done using casting
 ```python
 x = str(3)  # x will be'3'
 y = int(3)  # y will be 3
@@ -21,7 +22,8 @@ a= 10
 print(id(a))
 ```
 ## variable names
-A variable can be short name(like x and y) or more descriptive name (age,carname etc)
+A variable is the container to store the values
+### Rules
 * A variable name must start with later or _ character
 * Variable name can't start with number
 * A variable name contain only alphanumeric and underscores(A-z,0-9,and _)
@@ -55,7 +57,7 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
      print(my_variable_name)
      ```
 ## Assign multiple values in a variable
-* Many values to multiple variables
+* **Many values to multiple variables**
 
   Python allows you to assign values to multiple variable in single line
   ```python
@@ -65,7 +67,7 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
   print(y)
   print(z)
   ```
-* One value to multiple variable
+* **One value to multiple variable**
 
   Assign same value to multiple variable
   ```python
@@ -77,7 +79,7 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
   ```
 * Unpack collection
 
-   If you have collection of values in a list,tuple etc.Python allows you to extract values into variables
+   Collection of values in a list,tuple etc.
    ```pthon
    names = ["vedant", "Vrashab", "Basavaraj"]
   
@@ -86,6 +88,9 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
    print(y)
    print(z)
    ```
+>![NOTE]
+>
+> Python allows you to extract values into variables
 ## type of variable
 * Global variables
   
@@ -111,7 +116,7 @@ A variable can be short name(like x and y) or more descriptive name (age,carname
   myfunc()
   ```
 * Class Variable
-  * Variable created inside th class
+  * Variable created inside the class
   * Can't be used outside the class
 ```python
 # global variables
