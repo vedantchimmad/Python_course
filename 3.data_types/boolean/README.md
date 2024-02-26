@@ -10,7 +10,7 @@
   ```
 When you run a condition in an if statement, Python returns True or False:
 ```python
-a = 200
+a = 250
 b = 33
 
 if b > a:
@@ -51,8 +51,8 @@ else:
 * One more value, or object in this case, evaluates to False, and that is if you have an object that is made from a class with a __len__ function that returns 0 or False:
   ```python
   class myclass():
-  def __len__(self):
-    return 0
+      def __len__(self):
+          return 0
 
   myobj = myclass()
   print(bool(myobj))
