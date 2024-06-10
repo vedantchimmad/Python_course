@@ -136,3 +136,14 @@ def tri_recursion(k):
 print("\n\nRecursion Example Results")
 tri_recursion(6)
 ```
+## Closer function
+* Returning the inner function to the caller variable is called clouser function
+```python
+def clouser():
+  a = "vedant"
+  def hi():
+    print(a())
+  return hi
+b = clouser()
+b()
+```
