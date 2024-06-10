@@ -30,7 +30,7 @@ RegEx can be used to check if a string contains the specified search pattern.
   >
   > f there is more than one match, only the first occurrence of the match will be returned
 
-* split
+* ### split
   The split() function returns a list where the string has been split at each match
   ```python
   import re
@@ -39,7 +39,7 @@ RegEx can be used to check if a string contains the specified search pattern.
   x = re.split(" ", txt)
   print(x)
   ```
-* sub
+* ### sub
   The sub() function replaces the matches with the text of your choice
   ```python
   import re
