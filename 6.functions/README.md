@@ -147,3 +147,20 @@ def clouser():
 b = clouser()
 b()
 ```
+## Decorator
+functions are taken as the argument into another function and then called inside the wrapper function.
+```python
+def decorator(fun):
+    def wrapper(msz):
+        print("*"*10)
+        fun(msz)
+        print("*"*5)
+    return wrapper()
+
+def display(msz):
+    print(msz)
+
+d=decorator(display())
+d("hello")
+
+```
