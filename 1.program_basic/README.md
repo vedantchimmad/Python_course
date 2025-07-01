@@ -84,8 +84,37 @@ It tells the hardware **what to do and how to do it**.
 | Database Software    | MySQL, PostgreSQL          |
 
 ---
-## What is program..?
-Program is a sequence of instruction telling a computer what to do
+## 🧾 What is a Program?
+
+### 📘 Definition
+
+A **program** is a **sequence of instructions written in a programming language** that a computer can understand and execute to perform a specific task or solve a problem.
+
+It acts as a **communication bridge** between the user and the computer hardware.
+
+
+
+### 🧠 Key Features
+
+| Feature         | Description                                             |
+|-----------------|---------------------------------------------------------|
+| Language        | Written in languages like Python, Java, C++, etc.       |
+| Execution       | Can be compiled or interpreted to run on a machine      |
+| Purpose         | Automate tasks, solve problems, control hardware        |
+| Structure       | Includes variables, logic, loops, conditions, and I/O   |
+
+---
+
+## 🧰 Example: Python Program
+
+```python
+# Program to calculate the sum of two numbers
+def add(a, b):
+    return a + b
+
+result = add(10, 5)
+print("Sum:", result)  # Output: Sum: 15
+```
 
 ## What is programming..?
 Process of creating software is called programming
