@@ -116,8 +116,37 @@ result = add(10, 5)
 print("Sum:", result)  # Output: Sum: 15
 ```
 
-## What is programming..?
-Process of creating software is called programming
+## 💻 What is Programming?
+
+### 📘 Definition
+
+**Programming** is the process of **writing instructions (code)** that a computer can understand and execute to perform a specific task.
+
+It involves using a **programming language** to create **software, applications, scripts**, or systems that solve problems or automate processes.
+
+### 🔑 Key Concepts in Programming
+
+| Concept                  | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| **Code**                 | Instructions written by the programmer                       |
+| **Syntax**               | Rules of the programming language                            |
+| **Logic**                | Sequence of operations that define what the program does     |
+| **Compiler/Interpreter** | Translates code into machine-readable form                   |
+| **Bug**                  | An error or flaw in the program                              |
+
+---
+
+## 🧰 Example: A Simple Python Program
+
+```python
+# Program to check if a number is even or odd
+num = 6
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+    
 ## History
 The implementation of Python was started in the December 1989 by Guido Van Rossum at CWI in
 Netherland.
