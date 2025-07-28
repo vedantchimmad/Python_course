@@ -1,18 +1,51 @@
-# Variables
+# 📘 Python Variables
 
 ---
-* Variables are containers to store data 
-* python has no command for declaring the variables
-* Variable is created the moment assign a value to it so it is called dynamically typed 
+## 🎯 What is a Variable?
+A **variable** is a container for storing data values.
 
-## Casting
-* Covert one data from one form to another 
-* If you want to store the data type that can be done using casting
+In Python, variables are **created automatically** when you assign a value.
+* Python is dynamically typed
+### 🛠️ Syntax
+
 ```python
-x = str(3)  # x will be'3'
-y = int(3)  # y will be 3
-z = float(3) # z will be 3.0
+variable_name = value
 ```
+#### ✅ Examples
+```python
+x = 5
+name = "Alice"
+price = 99.99
+is_active = True
+```
+---
+## 🔄 Python Type Casting (Type Conversion)
+
+### 🎯 What is Casting?
+**Type casting** (or type conversion) means converting a variable from one data type to another.
+
+In Python, you can **manually convert** (cast) between types using built-in functions.
+
+### 🧪 Common Casting Functions
+
+| Function   | Converts To      | Example                     |
+|------------|------------------|-----------------------------|
+| `int()`    | Integer           | `int("5") → 5`              |
+| `float()`  | Float             | `float("3.14") → 3.14`      |
+| `str()`    | String            | `str(100) → "100"`          |
+| `bool()`   | Boolean           | `bool(1) → True`            |
+
+---
+
+### 📦 Examples
+
+#### ✅ Convert string to integer
+```python
+x = "123"
+y = int(x)
+print(y + 1)  # 124
+```
+---
 ## Memory address
 * Python everything will treated as object
 * To return address of object use `id()`
