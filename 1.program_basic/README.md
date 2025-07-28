@@ -392,14 +392,23 @@ print(keyword.kwlist)
 * New keywords may be added in future versions
 ---
 
-# User Input
+## 🧾 User Input in Python
 
----
-* In python we can ask the user for input.
+### 🎯 Purpose
+User input allows a Python program to interact with the user by receiving values during execution.
 
-* uses the `input()` method.
+### 🛠️ Syntax: `input()`
+
 ```python
-username = input("Enter username:")
-print("Username is: " + username)
+name = input("Enter your name: ")
+print("Hello,", name)
 ```
-* Python stops executing when it comes to the input() function, and continues when the user has given some input.
+#### 🧪 Example
+```python
+age = int(input("Enter your age: "))
+print("You are", age, "years old.")
+```
+> 📌 Note: 
+> * input() always returns a string.
+> * Use int() or float() to convert if needed.
+> * Python stops executing when it comes to the input() function, and continues when the user has given some input.
