@@ -190,13 +190,26 @@ Python supports multiple programming paradigms such as:
 # This is a simple Python program
 print("Hello, World!")
 ```
-## What can python do
-* TO create desktop application
-* Web application
-* Data science
-* Game development
-* Machine learning
-* AI
+## 🧠 What Can Python Do?
+| Area                                | What Python Can Do                                                             | Example Libraries / Tools              |
+| ----------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------- |
+| **1. Web Development**              | Build dynamic websites and web applications                                    | Django, Flask, FastAPI                 |
+| **2. Data Analysis**                | Analyze and manipulate large datasets                                          | Pandas, NumPy                          |
+| **3. Machine Learning / AI**        | Train models, make predictions, automate decision-making                       | Scikit-learn, TensorFlow, PyTorch      |
+| **4. Automation (Scripting)**       | Automate repetitive tasks like file handling, data entry, or system monitoring | `os`, `shutil`, `subprocess`           |
+| **5. Game Development**             | Create 2D or basic 3D games                                                    | Pygame                                 |
+| **6. Desktop Apps**                 | Build GUI-based desktop applications                                           | Tkinter, PyQt, Kivy                    |
+| **7. Web Scraping**                 | Extract data from websites                                                     | BeautifulSoup, Scrapy, Selenium        |
+| **8. Database Access**              | Interact with SQL and NoSQL databases                                          | SQLite, SQLAlchemy, PyODBC, PyMongo    |
+| **9. Cybersecurity / Hacking**      | Write scripts for penetration testing, sniffing, scanning                      | Scapy, Nmap, Metasploit (via script)   |
+| **10. Networking**                  | Build network tools and socket-based apps                                      | `socket`, `asyncio`, Twisted           |
+| **11. DevOps & CI/CD**              | Automate builds, testing, deployment, and cloud provisioning                   | Ansible, Fabric, Jenkins (integration) |
+| **12. Cloud / Serverless**          | Deploy on AWS Lambda, Azure Functions, Google Cloud Functions                  | Boto3, Google Cloud SDK                |
+| **13. IoT Development**             | Interface with sensors, actuators, and hardware on Raspberry Pi                | RPi.GPIO, Adafruit CircuitPython       |
+| **14. Scientific Computing**        | Perform numerical simulations, calculus, and plotting                          | SciPy, SymPy, Matplotlib               |
+| **15. Blockchain**                  | Build blockchain-based applications and smart contracts                        | Web3.py, Brownie                       |
+| **16. Natural Language Processing** | Understand and generate human language                                         | NLTK, spaCy, Transformers              |
+
 
 ## 🐍 Features of Python
 | Feature                           | Description                                                                |
