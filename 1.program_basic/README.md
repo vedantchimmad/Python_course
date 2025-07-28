@@ -115,7 +115,7 @@ def add(a, b):
 result = add(10, 5)
 print("Sum:", result)  # Output: Sum: 15
 ```
-
+---
 ## 💻 What is Programming?
 
 ### 📘 Definition
@@ -146,8 +146,9 @@ if num % 2 == 0:
 else:
     print("Odd")
 ```
+---
     
-## # Python Programming Language: History Overview
+## Python Programming Language: History Overview
 
 ### 📌 Origin
 - **Created by**: Guido van Rossum
@@ -202,8 +203,6 @@ Python supports multiple programming paradigms such as:
 - **Object-oriented programming**
 - **Functional programming**
 
----
-
 ### 🔑 Key Features of Python
 
 | Feature                   | Description                                            |
@@ -215,7 +214,6 @@ Python supports multiple programming paradigms such as:
 | ⚙️ Cross-Platform         | Runs on Windows, macOS, Linux                          |
 | 🔗 Integrations           | Works with C/C++, Java, web APIs, databases            |
 
----
 
 ### 🧰 Python Hello World Example
 
@@ -243,8 +241,7 @@ print("Hello, World!")
 | **15. Blockchain**                  | Build blockchain-based applications and smart contracts                        | Web3.py, Brownie                       |
 | **16. Natural Language Processing** | Understand and generate human language                                         | NLTK, spaCy, Transformers              |
 
-
-## 🐍 Features of Python
+### 🐍 Features of Python
 | Feature                           | Description                                                                |
 | --------------------------------- | -------------------------------------------------------------------------- |
 | **1. Easy to Learn & Use**        | Simple syntax similar to English, beginner-friendly                        |
@@ -263,7 +260,7 @@ print("Hello, World!")
 | **14. Memory Management**         | Automatic garbage collection handled by Python's memory manager            |
 | **15. Support for Scripting**     | Ideal for automation tasks and scripting small programs                    |
 
-
+---
 ## 🧾 Indentation
 
 ### 📌 What is Indentation?
@@ -294,6 +291,7 @@ if True:
 * try, except, finally
 * with blocks
 
+---
 ## 🧾 Comments in Python
 
 ### 📌 What Are Comments?
@@ -332,7 +330,7 @@ print(add(3, 5))  # Outputs: 8
 >💡NOTE : 
   >
   > Since python will ignore string literals that are not assigned to a variable
-
+---
 ## 🧾 Python Keywords
 
 ### 🎯 What Are Keywords?
@@ -378,8 +376,6 @@ You **cannot** use them as variable names, function names, or identifiers.
 | `while`       | Loop while condition is True             |
 | `with`        | Context manager                          |
 | `yield`       | Return from generator                    |
-
----
 
 ### 🔍 How to List Keywords in Python
 ```python
