@@ -198,15 +198,25 @@ print("Hello, World!")
 * Machine learning
 * AI
 
-## Features of python
-* Python works on different platforms
-* open source and free
-* Python has simple syntax similar to the english language,easy to code and easy to understand
-* Python runs on **interpreter system** meaning code can be executed as soon as it is written
-* Object-oriented approach
-* Highly portable
-* Large standard library 
-* dynamically-typed
+## 🐍 Features of Python
+| Feature                           | Description                                                                |
+| --------------------------------- | -------------------------------------------------------------------------- |
+| **1. Easy to Learn & Use**        | Simple syntax similar to English, beginner-friendly                        |
+| **2. Interpreted Language**       | Executes code line-by-line; no compilation needed                          |
+| **3. High-Level Language**        | Abstracts low-level details like memory management                         |
+| **4. Dynamically Typed**          | No need to declare variable types; handled at runtime                      |
+| **5. Object-Oriented**            | Supports OOP principles: classes, inheritance, encapsulation, polymorphism |
+| **6. Extensive Standard Library** | Comes with built-in modules for file I/O, system calls, etc.               |
+| **7. Platform Independent**       | Write once, run anywhere (Windows, Mac, Linux)                             |
+| **8. Open Source**                | Free to use and distribute; backed by a strong community                   |
+| **9. Large Community Support**    | Vast number of tutorials, forums, and open-source contributions            |
+| **10. Embeddable & Extensible**   | Can integrate with C/C++, Java, and other languages                        |
+| **11. GUI Programming Support**   | Libraries like Tkinter, PyQt, Kivy for building interfaces                 |
+| **12. Portable**                  | Python programs can run on any OS without modification                     |
+| **13. Strong Integration**        | Works well with web, data science, automation, machine learning, etc.      |
+| **14. Memory Management**         | Automatic garbage collection handled by Python's memory manager            |
+| **15. Support for Scripting**     | Ideal for automation tasks and scripting small programs                    |
+
 
 ## Python Indentation
 * space at the beginning of a code line 
