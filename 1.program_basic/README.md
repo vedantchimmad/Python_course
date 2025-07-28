@@ -294,32 +294,45 @@ if True:
 * try, except, finally
 * with blocks
 
-## Comments in python
- 
-### Uses
-* Comments can be used to explain code
-* Used to make code more readable
-* Used to prevent when execution
+## 🧾 Comments in Python
 
-  ### 1.Single line comment
-  * Comments start with A #
-  ```python
-   # this is single line comment
-   print("Hello world!")
-  ```
-  ### 2.Multi line comment
-  * Python really doesn't have a syntax for multiline comment
-  * To add a multiline need to insert # for each line
-  ```python
-  '''
-  This is multi line comment
-  '''
-  print("Hello world!")
-  ```
+### 📌 What Are Comments?
+- Comments are **notes** in your code to explain what's happening.
+- Python **ignores** them during execution.
+- Useful for documentation, debugging, and code clarity.
 
-  >[!NOTE]
+### 🧠 Types of Comments
+
+#### 1️⃣ Single-line Comment
+- Begins with a `#`
+- Everything after `#` is ignored by Python
+
+```python
+# This is a single-line comment
+print("Hello, World!")  # This prints a message
+```
+#### 2️⃣ Multi-line Comment
+* Use triple quotes (''' or """) to write multi-line comments
+* These are technically multi-line strings that are not assigned
+```python
+'''
+This is a multi-line comment.
+It can span multiple lines.
+'''
+print("Python comments!")
+```
+#### 🧪 Example
+```python
+# Function to add two numbers
+def add(a, b):
+  return a + b  # Return the sum
+
+print(add(3, 5))  # Outputs: 8
+```
+>💡NOTE : 
   >
   > Since python will ignore string literals that are not assigned to a variable
+
 ## keywords
 Reserved words in python Language that can not be used as a variable name, function name, or any other identifier.
 
