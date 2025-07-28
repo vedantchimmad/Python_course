@@ -333,15 +333,64 @@ print(add(3, 5))  # Outputs: 8
   >
   > Since python will ignore string literals that are not assigned to a variable
 
-## keywords
-Reserved words in python Language that can not be used as a variable name, function name, or any other identifier.
+## 🧾 Python Keywords
 
-Example : and, as, or, false etc
+### 🎯 What Are Keywords?
+Python **keywords** are **reserved words** that have **special meaning** in the language.  
+You **cannot** use them as variable names, function names, or identifiers.
+
+### 🗂️ List of Python 3.x Keywords
+
+| Keyword       | Purpose                                  |
+|---------------|------------------------------------------|
+| `False`       | Boolean value                            |
+| `None`        | Represents null value                    |
+| `True`        | Boolean value                            |
+| `and`         | Logical AND                              |
+| `as`          | Alias (e.g., `import x as y`)            |
+| `assert`      | Debug check                              |
+| `async`       | Declare async functions                  |
+| `await`       | Await expression in async                |
+| `break`       | Exit loop early                          |
+| `class`       | Define a class                           |
+| `continue`    | Skip current loop iteration              |
+| `def`         | Define a function                        |
+| `del`         | Delete an object                         |
+| `elif`        | Else if condition                        |
+| `else`        | Alternate block in conditionals          |
+| `except`      | Catch exceptions                         |
+| `finally`     | Code that always runs in try-except      |
+| `for`         | Loop statement                           |
+| `from`        | Import from module                       |
+| `global`      | Declare global variable                  |
+| `if`          | Conditional statement                    |
+| `import`      | Import module                            |
+| `in`          | Membership test                          |
+| `is`          | Identity test                            |
+| `lambda`      | Anonymous function                       |
+| `nonlocal`    | Non-local variable reference             |
+| `not`         | Logical NOT                              |
+| `or`          | Logical OR                               |
+| `pass`        | Do nothing (placeholder)                 |
+| `raise`       | Raise exception                          |
+| `return`      | Return from function                     |
+| `try`         | Try block for exceptions                 |
+| `while`       | Loop while condition is True             |
+| `with`        | Context manager                          |
+| `yield`       | Return from generator                    |
+
+---
+
+### 🔍 How to List Keywords in Python
 ```python
 import keyword
-
 print(keyword.kwlist)
 ```
+## 🧠 Notes
+* Python keywords are case-sensitive
+* Do not use them for variable names
+* New keywords may be added in future versions
+---
 
 # User Input
 
