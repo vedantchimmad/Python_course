@@ -141,7 +141,7 @@ TotalPrice = 120.00
 | `camelCase`  | `totalAmountDue`   | ✅ Yes            | ❌ No            |
 | `PascalCase` | `TotalAmountDue`   | ✅ Yes            | ❌ No (for vars) |
 | `kebab-case` | `total-amount-due` | ❌ No             | ❌ No            |
-
+---
 ## 📦 Assigning Multiple Values to Variables in Python
 
 Python allows assigning **multiple values** to one or more variables in a single line. This improves code clarity and reduces repetition.
