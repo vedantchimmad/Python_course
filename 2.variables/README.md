@@ -82,129 +82,182 @@ print(id(b))  # different from a
 ```
 ---
 
-## variable names
-A variable is the container to store the values
-### Rules
-* A variable name must start with later or _ character
-* Variable name can't start with number
-* A variable name contain only alphanumeric and underscores(A-z,0-9,and _)
-* variable names are case-sensitive(age=!AGE)
-* Variable name can't be python keywords
+## 🏷️ Variable Names
 
-## Multi words variable names
-* variable name with more than one word is difficult to read hence there are several techniques to make more readable 
-  1. Camel case
-  
-     Each word except first start with capital later
-     ```python
-     myVariableName="vedant'
-     
-     print(myVariableName)
-     ```
-  2. Pascal case
-  
-     Each word start with capital later
-     ```python
-     MyVariableName = "Vedant"
-     
-     print(MyVariableName)
-     ```
-  3. Snake case
-  
-     Each word separated by underscore
-     ```python
-     my_variable_name = "Vedant"
-     
-     print(my_variable_name)
-     ```
-## Assign multiple values in a variable
-* **Many values to multiple variables**
+### ✅ What is a Variable Name?
+A **variable name** is an identifier used to refer to a value stored in memory. It allows us to access and manipulate data in a Python program.
 
-  Python allows you to assign values to multiple variable in single line
-  ```python
-  x,y,z = "apple","orange","mango"
-  
-  print(x)
-  print(y)
-  print(z)
-  ```
-* **One value to multiple variable**
+### 📜 Rules for Naming Variables in Python
 
-  Assign same value to multiple variable
-  ```python
-  x = y = z = "apple"
-  
-  print(x)
-  print(y)
-  print(z)
-  ```
-* Unpack collection
+| Rule # | Description |
+|--------|-------------|
+| 1️⃣ | Must start with a **letter** (a–z, A–Z) or an **underscore** (_) |
+| 2️⃣ | The rest of the name can include **letters**, **numbers** (0–9), or **underscores** |
+| 3️⃣ | Cannot be a **Python keyword** (like `if`, `else`, `while`, etc.) |
+| 4️⃣ | Python is **case-sensitive** (`Name`, `name`, and `NAME` are different) |
 
-   Collection of values in a list,tuple etc.
-   ```pthon
-   names = ["vedant", "Vrashab", "Basavaraj"]
-  
-   x,y,z = names
-   print(x)
-   print(y)
-   print(z)
-   ```
->![NOTE]
->
-> Python allows you to extract values into variables
-## type of variable
-* Global variables
-  
-  * Variables that are created outside the function 
-  * Variable used both inside and outside function
-  ```pthon
-  x = "hello welcome"
-  
-  def myfunc():
-     print(x)
-  myfunc()
-  ```
-* Local variables
-  * Variable created inside the function
-  * Can't be use outside function
-  ```python
-  x = "hello welcome"
-  
-  def myfunc():
-     x = "hello world!"
-     print(x)
-  
-  myfunc()
-  ```
-* Class Variable
-  * Variable created inside the class
-  * Can't be used outside the class
+### ✅ Valid Variable Names
+
 ```python
-# global variables
-i,j=15,25   
-class MyClass:
-    # class variables
-    a,b=10,20   
-    def add(self,x,y):
-        #x, y are local variables
-        print(x+y)
-
-        # a, b are class variables
-        print(self.a+self.b)
-        # i, j are global variables
-        print(i+j)   
-
-mc=MyClass()
-mc.add(100,200)
+name = "Alice"
+_age = 25
+total_amount1 = 100.50
 ```
-## Global keyword
-  * used to make local variable to global variable
-  ```python
-  def myfunc():
+
+## 🔤 Multi-Word Variable Names in Python
+
+In Python, **multi-word variable names** help make your code more readable and descriptive. There are several naming conventions to follow based on your coding style or project guidelines.
+
+### ✅ Common Naming Conventions
+
+#### 1. snake_case ✅ (Most common in Python)
+* Uses lowercase letters
+* Words separated by underscores
+* Preferred in Python community (PEP 8 standard)
+```python
+first_name = "Alice"
+total_price = 150.75
+user_profile_picture_url = "http://..."
+```
+#### 2. camelCase ❌ (Common in JavaScript, not Pythonic)
+```python
+firstName = "Bob"
+totalPrice = 99.99
+```
+* First word starts lowercase
+* Subsequent words are capitalized
+* Not preferred in Python
+#### 3. PascalCase ❌ (Used for Class Names in Python)
+* Each word starts with a capital letter
+* Used only for class names by convention
+```python
+FirstName = "Charlie"
+TotalPrice = 120.00
+```
+### 📌 Summary Table
+| Convention   | Example            | Valid in Python? | Recommended?    |
+| ------------ | ------------------ | ---------------- | --------------- |
+| `snake_case` | `total_amount_due` | ✅ Yes            | ✅ Yes           |
+| `camelCase`  | `totalAmountDue`   | ✅ Yes            | ❌ No            |
+| `PascalCase` | `TotalAmountDue`   | ✅ Yes            | ❌ No (for vars) |
+| `kebab-case` | `total-amount-due` | ❌ No             | ❌ No            |
+
+## 📦 Assigning Multiple Values to Variables in Python
+
+Python allows assigning **multiple values** to one or more variables in a single line. This improves code clarity and reduces repetition.
+
+### ✅ Assign Multiple Values to Multiple Variables
+* Assigns values 10 → x, 20 → y, 30 → z
+* Number of variables must match number of values
+```python
+x, y, z = 10, 20, 30
+print(x)  # 10
+print(y)  # 20
+print(z)  # 30
+```
+### ✅ Assign Same Value to Multiple Variables
+* All variables `a`, `b`, `c` reference the same value
+```python
+a = b = c = 100
+print(a, b, c)  # 100 100 100
+```
+### ✅ Unpacking a Collection (Tuple/List)
+* This is called unpacking
+* Works with tuples, lists, or any iterable
+```python
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+print(x)  # apple
+print(y)  # banana
+print(z)  # cherry
+```
+### ✅ Use Asterisk * for Variable-Length Unpacking
+* `*b` captures the middle items as a list
+```python
+numbers = [1, 2, 3, 4, 5]
+a, *b, c = numbers
+print(a)  # 1
+print(b)  # [2, 3, 4]
+print(c)  # 5
+```
+### 🧪 Summary
+| Syntax                       | Purpose                                 |
+| ---------------------------- | --------------------------------------- |
+| `a, b, c = 1, 2, 3`          | Assign multiple values to multiple vars |
+| `a = b = c = 100`            | Assign same value to multiple vars      |
+| `a, b, c = [1, 2, 3]`        | Unpack list or tuple                    |
+| `a, *b, c = [1, 2, 3, 4, 5]` | Extended unpacking with `*`             |
+
+---
+## 🧠 Types of Variables in Python
+
+Python allows variables to be categorized based on **scope and lifetime**.
+
+### 🌍 1. Global Variables
+
+- Defined **outside of functions**.
+- Can be **accessed anywhere** in the code (inside and outside of functions).
+
+```python
+x = "hello welcome"  # Global variable
+
+def myfunc():
+    print(x)         # Accessing global variable
+
+myfunc()
+```
+### 🔒 2. Local Variables
+- Defined inside a function.
+- Accessible only within that function.
+- Overrides any global variable of the same name within the function scope.
+```python
+x = "hello welcome"  # Global variable
+
+def myfunc():
+    x = "hello world!"  # Local variable
+    print(x)
+
+myfunc()  # Output: hello world!
+```
+### 🧱 3. Class Variables
+- Defined inside a class but outside all methods.
+- Shared by all instances of the class.
+- Accessed using `self` or `ClassName.variable.`
+```python
+# Global variables
+i, j = 15, 25
+
+class MyClass:
+    # Class variables
+    a, b = 10, 20
+
+    def add(self, x, y):
+        # x, y → Local variables
+        print("Local sum:", x + y)
+
+        # Class variables
+        print("Class sum:", self.a + self.b)
+
+        # Global variables
+        print("Global sum:", i + j)
+
+mc = MyClass()
+mc.add(100, 200)
+```
+### 🔑 Global Keyword
+- Used to modify a global variable from within a function.
+- Without `global`, any assignment inside a function creates a local variable.
+```python
+def myfunc():
     global x
-    x = "welcome"
-  
-  myfunc()
-  
-  print(x)
-  ```
+    x = "welcome"  # Declares x as global
+
+myfunc()
+print(x)  # Output: welcome
+```
+### 🧾 Summary
+| Scope  | Defined In       | Accessible In               |
+| ------ | ---------------- | --------------------------- |
+| Global | Outside function | Entire file                 |
+| Local  | Inside function  | Only inside that function   |
+| Class  | Inside class     | Through instances or `self` |
