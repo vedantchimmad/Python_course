@@ -46,14 +46,42 @@ y = int(x)
 print(y + 1)  # 124
 ```
 ---
-## Memory address
-* Python everything will treated as object
-* To return address of object use `id()`
-```python
-a= 10
+## 🧠 Python Memory Address
 
-print(id(a))
+### 🎯 What is a Memory Address?
+Every object in Python is stored in memory. A **memory address** is the location in memory where the object is stored.
+
+### 🧰 Function: `id()`
+
+Python provides a built-in function:
+
+```python
+id(object)
+# 🔹 It returns the unique identifier of the object (its memory address in CPython implementation).
 ```
+### 📌 Important Notes:
+* `id()` is unique and constant for an object during its lifetime.
+* For immutable objects (like integers, strings), Python may reuse memory addresses for optimization (called interning).
+* For mutable objects (like lists or dictionaries), new objects will have new addresses even if content is same.
+### 🧪 Example
+#### 1. immutable
+```python
+x = 10
+y = x
+
+print("ID of x:", id(x))
+print("ID of y:", id(y))  # Same as x since both refer to same object
+```
+#### 2. Immutable
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(id(a))  # e.g., 23232344
+print(id(b))  # different from a
+```
+---
+
 ## variable names
 A variable is the container to store the values
 ### Rules
