@@ -1,89 +1,53 @@
-# Strings
+## 🔤 Python String Type
 
 ---
-Strings are surrounded by single quotation or double quotation mark
->Example
-> 
-> 'hello' is same as "hello"
 
-Assign string to a variable
+In Python, **strings** are sequences of characters enclosed in **single**, **double**, or **triple quotes**.
+
+### ✅ Creating Strings
 ```python
-a = "vedant"
-print(a)
+str1 = 'Hello'
+str2 = "World"
+str3 = '''This is 
+a multi-line string.'''
 ```
->[!NOTE]
->
->You can assign multiline string to a variable with three double quotes or three single quotes
-## Strings are array
-Strings in python are arrays of bytes representing unicode characters
-
+### 🧠 String Properties
+| Property  | Description                                   |
+| --------- | --------------------------------------------- |
+| Immutable | Strings cannot be changed after creation      |
+| Ordered   | Characters have a defined index (like arrays) |
+| Iterable  | You can loop through them                     |
+| Indexed   | Supports indexing and slicing                 |
+### 📌 String Indexing
+Access characters using their index (starts at 0)
 ```python
-a = "hello world!"
-print(a[1])
+text = "Python"
+print(text[0])   # P
+print(text[-1])  # n
 ```
->[!NOTE]
-> 
-> Single character is simply string with length of 1
-### Looping through a string
-Since strings are arrays we can loop through character from a string using for loop
+### ✂️ String Slicing
 ```python
-a = "banana"
-
-for x in a :
-  print(x)
+text = "Programming"
+print(text[0:6])     # Progra
+print(text[:4])      # Prog
+print(text[4:])      # ramming
 ```
-#### String length 
-To get the length of string use the len() function
+### 🔄 String Concatenation & Repetition
 ```python
-a = "vedant"
+a = "Hello"
+b = "World"
+print(a + " " + b)    # Hello World
 
-print(len(a))
+print(a * 3)          # HelloHelloHello
 ```
-#### Check string
-To check certain phrase or character is present in a string, we can use the keyword "in"
+### ✅ Check Membership
 ```python
-a = "best thing in life is free"
-
-print("free" in a)
+text = "Python"
+print("y" in text)     # True
+print("z" not in text) # True
 ```
-Check if not in
+### 📏 String Length
 ```python
-a = "best thing in life is free"
-
-print("hello" not in a)
-```
----
-## Slicing
-You can return range of characters by using slice syntax
-
-Specify the start and end of the index, separated by colon 
-```python
-a = "hello, word!"
-
-print(a[2:5])
-```
->[!NOTE]
-> 
-> First character has index zero
-
-### Slice from the start 
-By leaving out the start index, the range will start at the first character
-```python
-a = "hello, world!"
-
-print(a[:5])
-```
-### Slice to the end
-By leaving out the end index, the range will go to the end
-```python
-a = "hello, world!"
-
-print(a[2:])
-```
-### Negative indexing
-Use negative indexes to start the slice from the end of string
-```python
-a = "hello, world!"
-
-print(a[-5:-2])
+text = "Data"
+print(len(text))  # 4
 ```
