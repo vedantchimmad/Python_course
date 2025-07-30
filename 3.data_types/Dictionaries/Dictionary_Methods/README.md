@@ -1,214 +1,95 @@
-# Dictionary Methods
+## 📘 Python Dictionary Methods
 
 ---
-## clear
-The clear() method removes all the elements from a dictionary.
-> Syntax
->
-> dictionary.clear()
+
+### ✅ 1. dict.clear()
+**Removes all elements from the dictionary**
 
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-car.clear()
-
-print(car)
+my_dict = {"name": "Alice", "age": 25}
+my_dict.clear()
+print(my_dict)  # {}
 ```
-## copy
-The copy() method returns a copy of the specified dictionary.
-> Syntax
->
-> dictionary.copy()
-
+### ✅ 2. dict.copy()
+**Returns a shallow copy of the dictionary**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.copy()
-
-print(x)
+original = {"name": "Bob"}
+copy_dict = original.copy()
+print(copy_dict)  # {'name': 'Bob'}
 ```
-## fromkeys
-The fromkeys() method returns a dictionary with the specified keys and the specified value.
->Syntax
->
-> dict.fromkeys(keys, value)
-
-| Parameter | Description                                                      |
-|-----------|------------------------------------------------------------------|
-| keys      | Required. An iterable specifying the keys of the new dictionary  |
-| value     | Optional. The value for all keys. Default value is None          |
-
+### ✅ 3. dict.fromkeys(seq, value)
+**reates a new dictionary with keys from seq and all values set to value**
 ```python
-x = ('key1', 'key2', 'key3')
-y = 0
-
-thisdict = dict.fromkeys(x, y)
-
-print(thisdict)
+keys = ['a', 'b', 'c']
+new_dict = dict.fromkeys(keys, 0)
+print(new_dict)  # {'a': 0, 'b': 0, 'c': 0}
 ```
-## get
-The get() method returns the value of the item with the specified key.
->Syntax
->
-> dictionary.get(keyname, value)
-
-| Parameter | Description                                                      |
-|-----------|------------------------------------------------------------------|
-| keyname   | Required. The keyname of the item you want to return the value from |
-| value     | Optional. A value to return if the specified key does not exist.Default value None         |
-
+### ✅ 4. dict.get(key, default=None)
+**Returns the value for key, or default if the key is not found**
 ```python
-car = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-
-x = car.get("price", 15000)
-
-print(x)
+my_dict = {"name": "Alice"}
+print(my_dict.get("name"))       # Alice
+print(my_dict.get("age", 0))     # 0
 ```
-## items
-The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
->Syntax
->
-> dictionary.items()
-
+### ✅ 5. dict.items()
+**Returns a view of (key, value) pairs**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.items()
-
-car["year"] = 2018
-
-print(x)
+my_dict = {"a": 1, "b": 2}
+print(list(my_dict.items()))  # [('a', 1), ('b', 2)]
 ```
-## keys
-TThe keys() method returns a view object. The view object contains the keys of the dictionary, as a list.
->Syntax
->
-> dictionary.keys()
-
+### ✅ 6. dict.keys()
+**Returns a view of all the keys**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.keys()
-
-car["color"] = "white"
-
-print(x)
+my_dict = {"a": 1, "b": 2}
+print(list(my_dict.keys()))  # ['a', 'b']
 ```
-## pop
-The pop() method removes the specified item from the dictionary.
->Syntax
->
-> dictionary.pop(keyname, defaultvalue)
-
-| Parameter | Description                                                                                                                                                           |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| keyname   | Required. The keyname of the item you want to remove                                                                                                                  |
-| value     | Optional. A value to return if the specified key do not exist.If this parameter is not specified, and the no item with the specified key is found, an error is raised |
+### ✅ 7. dict.values()
+**Returns a view of all the values**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.pop("model")
-
-print(x)
+my_dict = {"a": 1, "b": 2}
+print(list(my_dict.values()))  # [1, 2]
 ```
-## popitem
-The popitem() method removes the item that was last inserted into the dictionary.
->Syntax
->
-> dictionary.popitem()
-
+### ✅ 8. dict.pop(key[, default])
+**Removes key and returns its value; if key not found, returns `default` or raises `KeyError`**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.popitem()
-
-print(x)
+my_dict = {"a": 1, "b": 2}
+val = my_dict.pop("b")
+print(val)       # 2
+print(my_dict)   # {'a': 1}
 ```
-## setdefault
-The setdefault() method returns the value of the item with the specified key.
->Syntax
->
-> dictionary.setdefault(keyname, value)
-
-| Parameter | Description                                                                                                                              |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------|
-| keyname   | Required. The keyname of the item you want to return the value from                                                                      |
-| value     | Optional.If the key exist, this parameter has no effect.If the key does not exist, this value becomes the key's valueDefault value None  |
+### ✅ 9. dict.popitem()
+**Removes and returns the last inserted key-value pair (LIFO)**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.setdefault("color", "white")
-
-print(x)
+my_dict = {"x": 10, "y": 20}
+key, val = my_dict.popitem()
+print(key, val)  # y 20
 ```
-## update
-The update() method inserts the specified items to the dictionary.
->Syntax
->
->dictionary.update(iterable)
-
-| Parameter | Description                                                                                                                              |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------|
-| keyname   | A dictionary or an iterable object with key value pairs, that will be inserted to the dictionary                                         |
+### ✅ 10. dict.setdefault(key[, default])
+**Returns the value of `key`. If not found, inserts key with `default` value**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-car.update({"color": "White"})
-
-print(car)
+my_dict = {"a": 100}
+val = my_dict.setdefault("b", 200)
+print(my_dict)  # {'a': 100, 'b': 200}
 ```
-## values
-The values() method returns a view object. The view object contains the values of the dictionary, as a list.
->Syntax
->
-> dictionary.values()
-
+### ✅ 11. dict.update([other])
+**Updates dictionary with key-value pairs from another dictionary or iterable**
 ```python
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
-
-x = car.values()
-
-car["year"] = 2018
-
-print(x)
+d1 = {"a": 1}
+d2 = {"b": 2}
+d1.update(d2)
+print(d1)  # {'a': 1, 'b': 2}
 ```
+### 🔎 Summary Table:
+| Method         | Description                                |
+| -------------- | ------------------------------------------ |
+| `clear()`      | Removes all items                          |
+| `copy()`       | Returns shallow copy                       |
+| `fromkeys()`   | Creates new dict from keys & a default val |
+| `get()`        | Gets value by key with default             |
+| `items()`      | Returns (key, value) pairs                 |
+| `keys()`       | Returns keys                               |
+| `values()`     | Returns values                             |
+| `pop()`        | Removes item by key                        |
+| `popitem()`    | Removes last inserted item                 |
+| `setdefault()` | Gets value or sets if missing              |
+| `update()`     | Adds items from another dict               |
