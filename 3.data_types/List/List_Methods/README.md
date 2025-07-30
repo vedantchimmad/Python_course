@@ -1,197 +1,99 @@
-# List Methods
+## 📘 Python List Methods 
+
+Below are the commonly used list methods with individual examples.
 
 ---
-## append
-The append() method appends an element to the end of the list.
 
->Syntax
-> 
-> list.append(elmnt)
-
-| Parameter | Description                                             |
-|-----------|---------------------------------------------------------|
-|elmnt| Required. An element of any type (string, number, object etc.)|
+### 🔹 1. `append()`
+Adds a single element to the end of the list.
 
 ```python
-a = ["apple", "banana", "cherry"]
-b = ["Ford", "BMW", "Volvo"]
-a.append(b)
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)  # ['apple', 'banana', 'cherry']
 ```
-## clear
-The clear() method removes all the elements from a list.
-
->Syntax
-> 
-> list.clear()
+### 🔹 2. extend()
+Adds all elements from another iterable (list, tuple, etc.).
 ```python
-fruits = ['apple', 'banana', 'cherry', 'orange']
-
+fruits = ["apple", "banana"]
+fruits.extend(["kiwi", "orange"])
+print(fruits)  # ['apple', 'banana', 'kiwi', 'orange']
+```
+### 🔹 3. insert()
+Inserts an element at the specified position.
+```python
+fruits = ["apple", "banana"]
+fruits.insert(1, "grape")
+print(fruits)  # ['apple', 'grape', 'banana']
+```
+### 🔹 4. remove()
+Removes the first occurrence of the specified value.
+```python
+fruits = ["apple", "banana", "apple"]
+fruits.remove("apple")
+print(fruits)  # ['banana', 'apple']
+```
+### 🔹 5. pop()
+Removes and returns the element at the specified position (or last by default).
+```python
+fruits = ["apple", "banana", "cherry"]
+popped_item = fruits.pop()
+print(popped_item)  # cherry
+print(fruits)       # ['apple', 'banana']
+```
+### 🔹 6. clear()
+Removes all elements from the list.
+```python
+fruits = ["apple", "banana"]
 fruits.clear()
+print(fruits)  # []
 ```
-## copy
-The copy() method returns a copy of the specified list.
->Syntax
->
-> list.copy()
+### 🔹 7. index()
+Returns the index of the first occurrence of the specified value.
 ```python
-fruits = ['apple', 'banana', 'cherry', 'orange']
-
-x = fruits.copy()
+fruits = ["apple", "banana", "cherry"]
+idx = fruits.index("banana")
+print(idx)  # 1
 ```
-## count
-The count() method returns the number of elements with the specified value.
->Syntax
->
-> list.count(value)
-
-| Parameter | Description                                                                      |
-|-----------|----------------------------------------------------------------------------------|
-| value     | Required. Any type (string, number, list, tuple, etc.). The value to search for. |
-
+### 🔹 8. count()
+Returns the number of times a value appears in the list.
 ```python
-points = [1, 4, 2, 9, 7, 8, 9, 3, 1]
-
-x = points.count(9)
+fruits = ["apple", "banana", "apple"]
+print(fruits.count("apple"))  # 2
 ```
-## extend
-The extend() method adds the specified list elements (or any iterable) to the end of the current list.
->Syntax
->
-> list.extend(iterable)
-
-| Parameter | Description                                     |
-|-----------|-------------------------------------------------|
-| iterable  | Required. Any iterable (list, set, tuple, etc.) |
-
+### 🔹 9. sort()
+Sorts the list in ascending order.
 ```python
-fruits = ['apple', 'banana', 'cherry']
-
-points = (1, 4, 5, 9)
-
-fruits.extend(points)
+numbers = [4, 1, 3, 2]
+numbers.sort()
+print(numbers)  # [1, 2, 3, 4]
 ```
-## index
-The index() method returns the position at the first occurrence of the specified value.
->Syntax
->
-> list.index(elmnt)
-
-| Parameter | Description                                                                |
-|-----------|----------------------------------------------------------------------------|
-| elmnt     | Required. Any type (string, number, list, etc.). The element to search for |
-
+### 🔹 10. reverse()
+Reverses the order of the elements in the list.
 ```python
-fruits = [4, 55, 64, 32, 16, 32]
-
-x = fruits.index(32)
+numbers = [1, 2, 3, 4]
+numbers.reverse()
+print(numbers)  # [4, 3, 2, 1]
 ```
-## insert
-The insert() method inserts the specified value at the specified position.
->Syntax
->
-> list.insert(pos, elmnt)
-
-| Parameter | Description                                                         |
-|-----------|---------------------------------------------------------------------|
-| pos       | Required. A number specifying in which position to insert the value |
-| elmnt     | Required. An element of any type (string, number, object etc.)      |
-
+### 🔹 11. copy()
+Returns a shallow copy of the list.
 ```python
-fruits = ['apple', 'banana', 'cherry']
-
-fruits.insert(1, "orange")
+original = ["apple", "banana"]
+copied = original.copy()
+print(copied)  # ['apple', 'banana']
 ```
-## pop
-The pop() method removes the element at the specified position.
->Syntax
->
-> list.pop(pos)
-
-| Parameter | Description                                                                                                                    |
-|-----------|--------------------------------------------------------------------------------------------------------------------------------|
-| pos     | Optional. A number specifying the position of the element you want to remove, default value is -1, which returns the last item |
-
-```python
-fruits = ['apple', 'banana', 'cherry']
-
-x = fruits.pop(1)
-```
->[!NOTE]
-> 
-> The pop() method returns removed value.
-
-## remove
-The remove() method removes the first occurrence of the element with the specified value.
->Syntax
->
-> list.remove(elmnt)
-
-| Parameter | Description                                                                    |
-|-----------|--------------------------------------------------------------------------------|
-| elmnt     | Required. Any type (string, number, list etc.) The element you want to remove  |
-|
-
-```python
-fruits = ['apple', 'banana', 'cherry']
-
-fruits.remove("banana")
-```
-## reverse
-The reverse() method reverses the sorting order of the elements.
->Syntax
->
-> list.reverse()
-
-```python
-fruits = ['apple', 'banana', 'cherry']
-
-fruits.reverse()
-```
-## sort
-The sort() method sorts the list ascending by default.
->Syntax
->
-> list.sort(reverse=True|False, key=myFunc)
-
-| Parameter | Description                                                                    |
-|-----------|--------------------------------------------------------------------------------|
-| reverse   | Optional. reverse=True will sort the list descending. Default is reverse=False |
-| key       | Optional. A function to specify the sorting criteria(s)                        |
-
-```python
-cars = ['Ford', 'BMW', 'Volvo']
-
-cars.sort(reverse=True)
-```
-```python
-# A function that returns the length of the value:
-def myFunc(e):
-  return len(e)
-
-cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
-
-cars.sort(key=myFunc)
-```
-```python
-# A function that returns the 'year' value:
-def myFunc(e):
-  return e['year']
-
-cars = [
-  {'car': 'Ford', 'year': 2005},
-  {'car': 'Mitsubishi', 'year': 2000},
-  {'car': 'BMW', 'year': 2019},
-  {'car': 'VW', 'year': 2011}
-]
-
-cars.sort(key=myFunc)
-```
-```python
-# A function that returns the length of the value:
-def myFunc(e):
-  return len(e)
-
-cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
-
-cars.sort(reverse=True, key=myFunc)
-```
+---
+## 🛠 All Common List Methods
+| Method             | Description                                       | Example                             |
+| ------------------ | ------------------------------------------------- | ----------------------------------- |
+| `append(x)`        | Adds an element to the end of the list            | `fruits.append("orange")`           |
+| `extend(iterable)` | Adds all elements from an iterable                | `fruits.extend(["grape", "melon"])` |
+| `insert(i, x)`     | Inserts an element at a specific position         | `fruits.insert(1, "kiwi")`          |
+| `remove(x)`        | Removes the first item with the specified value   | `fruits.remove("banana")`           |
+| `pop([i])`         | Removes the element at the given position         | `fruits.pop(2)`                     |
+| `clear()`          | Removes all elements from the list                | `fruits.clear()`                    |
+| `index(x)`         | Returns the index of the first item with value x  | `fruits.index("apple")`             |
+| `count(x)`         | Returns the count of a value                      | `fruits.count("apple")`             |
+| `sort()`           | Sorts the list in ascending order (modifies list) | `fruits.sort()`                     |
+| `reverse()`        | Reverses the order of elements in the list        | `fruits.reverse()`                  |
+| `copy()`           | Returns a shallow copy of the list                | `new_fruits = fruits.copy()`        |
