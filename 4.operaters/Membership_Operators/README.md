@@ -1,20 +1,50 @@
-# Membership operators
+## 🔎 Python Membership Operators
 
 ---
-Membership operators are used to test if a sequence is presented in an object:
 
-| Operator | Name                                                                                                                           | Example                   |
-|----------|--------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| in       | Returns True if both variables are the same objectReturns True if a sequence with the specified value is present in the object | x in y                    |
-| not in   | Returns True if a sequence with the specified value is not present in the object                                               | x not in y                |
+Membership operators test whether a **value or variable** is **present in a sequence** (such as a string, list, tuple, set, or dictionary).
 
+---
+
+### 📊 Membership Operators Table
+
+| Operator | Description                                | Example             | Result     |
+|----------|--------------------------------------------|---------------------|------------|
+| `in`     | Returns `True` if a value is present       | `"a" in "apple"`    | `True`     |
+| `not in` | Returns `True` if a value is **not** present | `"x" not in "apple"`| `True`     |
+
+---
+
+## ✅ Examples
+
+### 1. `in`
 ```python
-x = ["apple", "banana"]
+# String
+print("a" in "apple")          # True
+print("x" in "apple")          # False
 
-# returns True because a sequence with the value "banana" is in the list
-print("banana" in x)
+# List
+fruits = ["apple", "banana", "cherry"]
+print("banana" in fruits)     # True
+print("grape" in fruits)      # False
 
-# returns True because a sequence with the value "pineapple" is not in the list
-print("pineapple" not in x)
+# Dictionary (checks keys)
+person = {"name": "John", "age": 30}
+print("name" in person)       # True
+print("John" in person)       # False
+```
+### 2. `not in`
+```python
+# String
+print("z" not in "apple")     # True
+print("p" not in "apple")     # False
+
+# Tuple
+numbers = (1, 2, 3, 4)
+print(5 not in numbers)       # True
+print(2 not in numbers)       # False
 
 ```
+### 🧠 Summary
+* Use `in` to check if an item exists.
+* Use `not in` to verify if it doesn't exist.
