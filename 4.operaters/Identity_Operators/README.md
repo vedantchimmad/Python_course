@@ -1,25 +1,44 @@
-# Identity operators
+## 🆔 Python Identity Operators
 
 ---
-Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:
 
+Identity operators are used to compare the **memory locations** of two objects, i.e., whether two variables point to the **same object** in memory.
 
-| Operator | Name                                                  | Example    |
-|----------|-------------------------------------------------------|------------|
-| is       | Returns True if both variables are the same object    | x is y     |
-| is not   | Returns True if both variables are not the same object| x is not y |
+---
 
+### 📊 Identity Operators Table
+
+| Operator | Name     | Description                                      | Example                |
+|----------|----------|--------------------------------------------------|------------------------|
+| `is`     | is       | Returns True if both variables reference the same object | `a is b`              |
+| `is not` | is not   | Returns True if variables reference different objects | `a is not b`          |
+
+---
+
+## ✅ Examples
+
+### 1. `is`
 ```python
-x = ["apple", "banana"]
-y = ["apple", "banana"]
-z = x
+a = [1, 2, 3]
+b = a
+print(a is b)       # True (same memory reference)
 
-# returns True because z is the same object as x
-print(x is z)
+x = [1, 2, 3]
+y = [1, 2, 3]
+print(x is y)       # False (different memory references)
+```
+### 2. is not
+```python
+print(a is not x)   # True (a and x do not point to the same object)
+```
+---
+### 🔎 Notes
+* `is` compares object identity.
+* Use `==` to compare values instead of memory addresses.
+```python
+x = [1, 2, 3]
+y = [1, 2, 3]
 
-# returns False because x is not the same object as y, even if they have the same content
-print(x is y)
-
-print(x is not y)
-
+print(x == y)    # True (values are the same)
+print(x is y)    # False (different objects in memory)
 ```
