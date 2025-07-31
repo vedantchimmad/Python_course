@@ -1,35 +1,59 @@
-# String format
+## ✨ Python String Formatting
 
 ---
-* To make sure a string will display as expected, we can format the result with the `format()` method.
-* The `format()` method allows you to format selected parts of a string.
+
+Python provides several ways to format strings. Here's a breakdown of the **most commonly used techniques**:
+
+---
+
+### 1. `f-strings` (Python 3.6+)
+👉 Most modern and readable way to embed expressions.
+
 ```python
-price = 49
-txt = "The price is {} dollars"
-print(txt.format(price))
-```
-### Multiple Values
-If you want to use more values, just add more values to the format() method.
-```python
-quantity = 3
-itemno = 567
-price = 49
-myorder = "I want {} pieces of item number {} for {:.2f} dollars."
-print(myorder.format(quantity, itemno, price))
-```
-### Index Numbers
-You can use index numbers (a number inside the curly brackets {0}) to be sure the values are placed in the correct placeholders
-```python
+name = "Alice"
 age = 25
-name = "Vedant"
-txt = "His name is {1}. {1} is {0} years old."
-print(txt.format(age, name))
+print(f"My name is {name} and I am {age} years old.")
+# Output: My name is Alice and I am 25 years old.
 ```
-### Named Indexes
-You can also use named indexes by entering a name inside the curly brackets `{carname}`, but then you must use names when you pass the parameter values `txt.format(carname = "Ford")`
+### 2. str.format()
+👉 Allows reordering, naming, and formatting of values.
 ```python
-myorder = "I have a {carname}, it is a {model}."
-print(myorder.format(carname = "Ford", model = "Mustang"))
+print("My name is {} and I am {} years old.".format("Bob", 30))
+# Output: My name is Bob and I am 30 years old.
+
+print("My name is {1} and I am {0} years old.".format(30, "Charlie"))
+# Output: My name is Charlie and I am 30 years old.
 ```
 
-
+### 3. % Formatting (Old Style)
+👉 Similar to C-style formatting, less preferred in new code.
+```python
+name = "David"
+age = 28
+print("My name is %s and I am %d years old." % (name, age))
+# Output: My name is David and I am 28 years old.
+```
+### 📌 Formatting Numbers
+#### Floating Point Precision
+```python
+pi = 3.1415926535
+print(f"Pi rounded to 2 decimal places: {pi:.2f}")
+# Output: Pi rounded to 2 decimal places: 3.14
+```
+#### Padding and Alignment
+```python
+print(f"{'Left':<10}{'Center':^10}{'Right':>10}")
+# Output: Left      Center      Right
+```
+### 📌 With Dictionaries & Variables
+```python
+person = {"name": "Eve", "age": 22}
+print("Name: {name}, Age: {age}".format(**person))
+# Output: Name: Eve, Age: 22
+```
+### ✅ Summary Table
+| Method         | Syntax Example            | Notes                       |
+| -------------- | ------------------------- | --------------------------- |
+| f-strings      | `f"Hello {name}"`         | Best practice (Python 3.6+) |
+| `.format()`    | `"Hello {}".format(name)` | Flexible and safe           |
+| `%` formatting | `"Hello %s" % name`       | Legacy, avoid in new code   |
