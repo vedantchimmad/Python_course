@@ -1,23 +1,37 @@
-# Nested if
+# 🔄 Python Nested `if` Statement
 
 ---
-You can have if statements inside if statements, this is called nested if statements.
->Syntax
-```pythonSyntax
-if (condition1):
-   # Executes when condition1 is true
-   if (condition2): 
-      # Executes when condition2 is true
-   # if Block is end here
-# if Block is end here
-```
-```python
-x = 41
 
-if x > 10:
-  print("Above ten,")
-  if x > 20:
-    print("and also above 20!")
-  else:
-    print("but not above 20.")
+Nested `if` statements mean using an `if` or `if...else` block **inside another `if` or `else` block**. This allows for more complex decision-making.
+
+## 🧾 Syntax
+
+```python
+if condition1:
+    if condition2:
+        # Code block if both condition1 and condition2 are True
+    else:
+        # Code block if condition1 is True but condition2 is False
+else:
+    # Code block if condition1 is False
 ```
+### ✅ Example : Grade Evaluator
+```python
+marks = 85
+
+if marks >= 50:
+    print("You passed!")
+    if marks >= 80:
+        print("Grade: A")
+    else:
+        print("Grade: B")
+else:
+    print("You failed.")
+```
+### 📋 Summary Table
+| Outer `if` | Inner `if` | Outcome                    |
+| ---------- | ---------- | -------------------------- |
+| True       | True       | Execute inner `if` block   |
+| True       | False      | Execute inner `else` block |
+| False      | -          | Execute outer `else` block |
+
