@@ -1,29 +1,38 @@
-# if-else
+# 🔁 Python `if...else` Statement
 
 ---
-* The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t.
-* if we want to do something else if the condition is false, we can use the else statement with the if statement.
->Syntax
-> 
-> if (condition):
-> 
->Executes this block if condition is true
-> 
->else:
-> 
->Executes this block if condition is false
+
+The `if...else` statement is used to execute one block of code **if a condition is true**, and another block **if the condition is false**.
+
+
+### 🧾 Syntax
+
 ```python
-a = 200
-b = 33
-if b > a:
-  print("b is greater than a")
+if condition:
+    # Code block if condition is True
 else:
-  print("b is not greater than a")
+    # Code block if condition is False
 ```
-## Short Hand If ... Else
-If you have only one statement to execute, one for if, and one for else, you can put it all on the same line
+### ✅ Example
 ```python
-a = 2
-b = 330
-print("A") if a > b else print("B")
+num = 10
+
+if num % 2 == 0:
+print("Even number")
+else:
+print("Odd number")
 ```
+### 🔹 Short Hand If-Else (Ternary Expression)
+You can write if...else in a single line for simple conditions:
+```python
+a = 5
+b = 10
+
+print("a is greater") if a > b else print("b is greater")
+```
+
+### 📋 Summary Table
+| Condition | Executes   |
+| --------- | ---------- |
+| True      | If block   |
+| False     | Else block |
