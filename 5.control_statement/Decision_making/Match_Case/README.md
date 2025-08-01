@@ -1,30 +1,40 @@
-# Match-Case Statement
+# 🎯 Python `match-case` Statement (Structural Pattern Matching)
 
 ---
-A Python match-case statement takes an expression and compares its value to successive patterns given as one or more case blocks.
->Syntax
-> 
-> match variable_name:
-> 
->case 'pattern 1' : statement 1
-> 
->case 'pattern 2' : statement 2
-> 
->...
-> 
->case 'pattern n' : statement n
+
+Introduced in **Python 3.10**, the `match-case` statement is similar to `switch-case` found in other languages like C, Java, etc. It provides a more readable way to handle **multiple conditional branches**.
+
+---
+
+## 🧾 Syntax
+
 ```python
-def weekday(n):
-   match n:
-      case 0: return "Monday"
-      case 1: return "Tuesday"
-      case 2: return "Wednesday"
-      case 3: return "Thursday"
-      case 4: return "Friday"
-      case 5: return "Saturday"
-      case 6: return "Sunday"
-      case _: return "Invalid day number"
-print (weekday(3))
-print (weekday(6))
-print (weekday(7))
+match variable:
+    case pattern1:
+        # Code block for pattern1
+    case pattern2:
+        # Code block for pattern2
+    case _:
+        # Default block (like else)
 ```
+### ✅ Example: Grade Evaluator
+```python
+grade = 'B'
+
+match grade:
+    case 'A':
+        print("Excellent")
+    case 'B':
+        print("Good")
+    case 'C':
+        print("Average")
+    case _:
+        print("Fail or Invalid grade")
+```
+### 🧠 Summary Table
+| Value   | Matches Case | Output       |
+| ------- | ------------ | ------------ |
+| 3       | case 3       | "Three"      |
+| 'B'     | case 'B'     | "Good"       |
+| 75      | if >= 75     | "Grade B"    |
+| Unknown | case \_      | Default case |
