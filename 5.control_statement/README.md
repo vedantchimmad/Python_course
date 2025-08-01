@@ -52,3 +52,10 @@ while count < 3:
 print("Count is", count)
 count += 1
 ```
+### 🔍 Summary Table
+| Category        | Statement            | Description                              |
+| --------------- | -------------------- | ---------------------------------------- |
+| Decision Making | `if`, `elif`, `else` | Executes code blocks based on conditions |
+|                 | `match-case`         | Matches fixed values (like switch-case)  |
+| Iteration       | `for`                | Repeats block for a sequence             |
+|                 | `while`              | Repeats block while condition is true    |
