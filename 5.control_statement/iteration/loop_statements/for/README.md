@@ -1,33 +1,88 @@
-# For
+# 🔁 Python `for` Loop
 
 ---
-* The for loop in Python has the ability to iterate over the items of any sequence, such as a list, tuple or a string.
-* With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
->Syntax
-> 
+
+A `for` loop in Python is used to **iterate over a sequence** (like a list, tuple, string, or range). It executes a block of code **once for each item** in the sequence.
+
+### 🧾 Syntax
+
 ```python
-for iterating_var in sequence:
-   statements(s)
+for variable in sequence:
+    # Code block to execute
 ```
+## 🧩  Examples
+### ✅ Example 1: Loop through a list
 ```python
 fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)
+
+for fruit in fruits:
+print(fruit)
 ```
-## The range() Function
-To loop through a set of code a specified number of times, we can use the range() function,
->Syntax
->
-> range(start, stop, step)
+#### 📌 Output:
 ```python
-for x in range(2, 30, 3):
-  print(x)
+apple
+banana
+cherry
 ```
-## Else in For Loop
-The else keyword in a for loop specifies a block of code to be executed when the loop is finished.
+### ✅ Example 2: Loop through a string
 ```python
-for x in range(6):
-  print(x)
+for char in "Python":
+print(char)
+```
+#### 📌 Output:
+```python
+P
+y
+t
+h
+o
+n
+```
+### ✅ Example 3: Using range()
+```python
+for i in range(5):
+print(i)
+```
+#### 📌 Output:
+```python
+0
+1
+2
+3
+4
+```
+### ✅ Example 4: Using range(start, stop, step)
+```python
+for i in range(2, 10, 2):
+print(i)
+```
+#### 📌 Output:
+```python
+2
+4
+6
+8
+```
+### ✅ Example 5: for with else
+```python
+for i in range(3):
+print("Number:", i)
 else:
-  print("Finally finished!")
+print("Loop finished!")
 ```
+
+#### 📌 Output:
+```python
+Number: 0
+Number: 1
+Number: 2
+Loop finished!
+```
+## 🧠 Summary Table
+| Usage            | Code Example         | Output Example            |
+| ---------------- | -------------------- | ------------------------- |
+| Loop over list   | `for x in [1, 2]:`   | 1 2                       |
+| Loop over string | `for ch in "hi":`    | h i                       |
+| Loop with range  | `for i in range(3):` | 0 1 2                     |
+| Loop with step   | `range(1, 5, 2)`     | 1 3                       |
+| For-else         | see above            | includes "Loop finished!" |
