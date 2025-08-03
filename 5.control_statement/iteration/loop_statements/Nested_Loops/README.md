@@ -1,43 +1,86 @@
-# Nested_loops
+# 🔁 Nested `for` and `while` Loops in Python
 
 ---
-Python programming language allows to use one loop inside another loop.
-## Nested For Loop
->Syntax
-```python
-for iterating_var in sequence:
-   for iterating_var in sequence:
-      statements(s)
-   statements(s)
-```
-```python
-months = ["jan", "feb", "mar"]
-days = ["sun", "mon", "tue"]
 
+In Python, **nested loops** are loops inside other loops. These are useful when you need to iterate over multi-dimensional data like matrices or perform repeated actions within each iteration of an outer loop.
 
-for x in months:
-  for y in days:
-    print(x, y)
+## 📌 Nested `for` Loop
 
-print("Good bye!")
-```
-## Nested While Loop
->Syntax
+### ✅ Example: Multiplication Table
+
 ```python
-while expression:
-   while expression:
-      statement(s)
-   statement(s)
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"{i} * {j} = {i * j}")
 ```
+#### 📤 Output:
 ```python
-i = 2
-while(i < 100):
-   j = 2
-   while(j <= (i/j)):
-      if not(i%j): break
-      j = j + 1
-   if (j > i/j) : print(i, " is prime")
-   i = i + 1
-
-print("Good bye!")
+1 * 1 = 1
+1 * 2 = 2
+1 * 3 = 3
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+3 * 1 = 3
+3 * 2 = 6
+3 * 3 = 9
 ```
+## 📌 Nested while Loop
+### ✅ Example: Print Matrix
+```python
+i = 1
+while i <= 3:
+    j = 1
+    while j <= 3:
+        print(f"{i},{j}", end='  ')
+        j += 1
+    print()
+    i += 1
+```
+#### 📤 Output:
+```python
+1,1  1,2  1,3  
+2,1  2,2  2,3  
+3,1  3,2  3,3 
+```
+ 
+## 📌 Mixed for inside while
+```python
+i = 1
+while i <= 2:
+    for j in range(1, 4):
+        print(f"i={i}, j={j}")
+    i += 1
+```
+#### 📤 Output:
+```python
+i=1, j=1
+i=1, j=2
+i=1, j=3
+i=2, j=1
+i=2, j=2
+i=2, j=3
+```
+
+#### 📌 Mixed while inside for
+```python
+for i in range(1, 3):
+    j = 1
+    while j <= 2:
+        print(f"i={i}, j={j}")
+        j += 1
+```
+#### 📤 Output:
+```python
+i=1, j=1
+i=1, j=2
+i=2, j=1
+i=2, j=2
+```
+## 🧠 Summary Table
+| Loop Type              | Description                                   |
+| ---------------------- | --------------------------------------------- |
+| `for` inside `for`     | Good for 2D structures like grids/lists       |
+| `while` inside `while` | Good when condition-based nesting is needed   |
+| `for` inside `while`   | Useful when the outer loop is condition-based |
+| `while` inside `for`   | Combines fixed and condition-based loops      |
