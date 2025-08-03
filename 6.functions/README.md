@@ -1,166 +1,166 @@
-# Functions
+# 🧩 Functions in Python
 
 ---
-* A function is a block of code which only runs when it is called.
-* A function can return data as a result.
-* In Python a function is defined using the `def` keyword
-* To call a function, use the function name followed by parenthesis.
+
+A **function** is a block of organized, reusable code that performs a specific task.
+
+### ✅ Defining and Calling a Function
+* 📘 **Definition**: The `def` keyword is used to declare a function in Python.
 ```python
 def my_function():
-  print("Hello from a function")
+    print("Hello from a function")
 
 my_function()
 ```
-## Arguments
-* Information can be passed into functions as arguments.
-* Arguments are specified after the function name, inside the parentheses,separate them with comma.
-```python
-def my_function(fname):
-  print(fname + " Refsnes")
+### 📥 Arguments/Parameters
+📘 **Definition**: Arguments are inputs you provide to a function when calling it. Parameters are the names used in the function definition.
+* Functions can take arguments (also called parameters).
+* Arguments are specified after the function name inside the parentheses.
 
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus")
+```python
+def greet(name):
+    print(name + " Refsnes")
+
+greet("Emil")
+greet("Tobias")
+greet("Linus")
+
 ```
->[!NOTE]
-> 
-> * An argument is the value that is sent to the function when it is called.
-> * parameter is the variable listed inside the parentheses in the function definition.
-## Positional Arguments
-* Passing a positional aruguments while calling a function
+### 📌 Positional Arguments
+📘 **Definition**: These must be provided in the correct order as expected by the function.
+* The order of values matters.
 ```python
 def passing_number(a, b):
-    add=a+b
+    print(a + b)
 
-passing_number(5,6)
+passing_number(5, 6)
+
 ```
->[!NOTE]
->
-> Always pass positional arguments first while calling a function
-## Keyword Arguments
-* You can also send arguments with the key = value syntax.
-* This way the order of the arguments does not matter.
+
+📌 Keyword Arguments
+📘 **Definition**: Keyword arguments use the form key=value, allowing flexibility in order.
+* Use key=value syntax; order doesn’t matter.
 ```python
 def my_function(child3, child2, child1):
-  print("The youngest child is " + child3)
+    print("The youngest child is " + child3)
 
-my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+my_function(child1="Emil", child2="Tobias", child3="Linus")
+
 ```
-## Number of Arguments
-* By default, a function must be called with the correct number of arguments.
-  ```python
-  def my_function(fname, lname):
+### ⚖️ Argument Count
+📘 **Definition**: Functions must be called with the exact number of arguments unless default or variable arguments are used.
+```python
+def full_name(fname, lname):
     print(fname + " " + lname)
 
-  my_function("Emil", "Refsnes")
-  ```
-* If you try to call the function with 1 or 3 arguments, you will get an error.
-## Arbitrary Arguments, *args
-* If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+full_name("Emil", "Refsnes")
+
+```
+### 🌟 Arbitrary Arguments `*args`
+📘 Definition: Allows a function to accept any number of positional arguments as a tuple.
+* Used when number of positional arguments is unknown.
 ```python
 def my_function(*kids):
-  print("The youngest child is " + kids[2])
+    print("The youngest child is " + kids[2])
 
 my_function("Emil", "Tobias", "Linus")
+
 ```
-## Arbitrary Keyword Arguments, **kwargs
-* If you do not know how many keyword arguments that will be passed into your function, add two asterisk: `**` before the parameter name in the function definition.
-* This way the function will receive a dictionary of arguments, and can access the items accordingly.
+🌟 Arbitrary Keyword Arguments `**kwargs`
+📘 **Definition**: Allows a function to accept any number of keyword arguments as a dictionary
+* Used when number of keyword arguments is unknown.
 ```python
 def my_function(**kid):
-  print("His last name is " + kid["lname"])
+    print("His last name is " + kid["lname"])
 
-my_function(fname = "Tobias", lname = "Refsnes")
+my_function(fname="Tobias", lname="Refsnes")
+
 ```
-## Default Parameter Value
-* If we call the function without argument, it uses the default value.
+### 🛡️ Default Argument Values
+📘 **Definition**: Assigns a default value to a parameter, used if no argument is passed.
 ```python
-def my_function(country = "Norway"):
-  print("I am from " + country)
+def my_function(country="Norway"):
+    print("I am from " + country)
 
-my_function("Sweden")
 my_function("India")
 my_function()
-my_function("Brazil")
+
 ```
-## Passing a List as an Argument
-* You can send any data types of argument to a function (string, number, list, dictionary etc.).
-* if you send a List as an argument, it will still be a List when it reaches the function.
+📚 List as Argument
+📘 **Definition**: You can pass lists (or other data types) to functions to work on collections of data.
 ```python
 def my_function(food):
-  for x in food:
-    print(x)
+    for x in food:
+        print(x)
 
 fruits = ["apple", "banana", "cherry"]
-
 my_function(fruits)
 ```
-## Return Values
-* To let a function return a value, use the return statement.
+### 🔁 Return Values
+📘 **Definition**: The `return` statement sends a value back to the caller and ends the function.
 ```python
 def my_function(x):
-  return 5 * x
+    return 5 * x
 
 print(my_function(3))
-print(my_function(5))
-print(my_function(9))
 ```
-## Positional-Only Arguments
-* You can specify that a function can have ONLY positional arguments, or ONLY keyword arguments.
-* To specify that a function can have only positional arguments, add , / after the arguments.
+### 🎯 Positional-only Arguments
+📘 **Definition**: Enforces that arguments must be passed by position only (introduced in Python 3.8+).
+
 ```python
 def my_function(x, /):
-  print(x)
+    print(x)
 
 my_function(3)
+
 ```
-## Keyword-Only Arguments
-* To specify that a function can have only keyword arguments, add *, before the arguments.
+### 🎯 Keyword-only Arguments
+📘 **Definition**: Enforces that arguments must be passed using keywords only.
 ```python
 def my_function(*, x):
-  print(x)
+    print(x)
 
-my_function(x = 3)
+my_function(x=3)
+
 ```
-## Recursion
-* Recursion is a common mathematical and programming concept. It means that a function calls itself.
+### ♻️ Recursion
+📘 **Definition**: When a function calls itself directly or indirectly, it’s known as recursion.
 ```python
 def tri_recursion(k):
-  if(k > 0):
-    result = k + tri_recursion(k - 1)
-    print(result)
-  else:
-    result = 0
-  return result
+    if k > 0:
+        result = k + tri_recursion(k - 1)
+        print(result)
+    else:
+        result = 0
+    return result
 
-print("\n\nRecursion Example Results")
-tri_recursion(6)
 ```
-## Closer function
-* Returning the inner function to the caller variable is called clouser function
+### 🧵 Closure Function
+📘 **Definition**: A closure is an inner function that remembers and has access to variables in the local scope where it was created, even after the outer function has finished executing.
 ```python
 def clouser():
-  a = "vedant"
-  def hi():
-    print(a())
-  return hi
+    a = "vedant"
+    def hi():
+        print(a)
+    return hi
+
 b = clouser()
 b()
+
 ```
-## Decorator
-functions are taken as the argument into another function and then called inside the wrapper function.
+### 🎀 Decorator Function
+📘 **Definition**: A decorator is a function that modifies the behavior of another function without changing its source code.
 ```python
 def decorator(fun):
     def wrapper(msz):
-        print("*"*10)
+        print("*" * 10)
         fun(msz)
-        print("*"*5)
-    return wrapper()
+        print("*" * 5)
+    return wrapper
 
 def display(msz):
     print(msz)
 
-d=decorator(display())
-d("hello")
-
+decorated = decorator(display)
+decorated("hello")
 ```
