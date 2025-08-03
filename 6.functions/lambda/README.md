@@ -1,30 +1,59 @@
-# Lambda
+# 🧮 lambda
+
+A `lambda` function is a small anonymous function defined using the `lambda` keyword. It can have any number of arguments, but only one expression.
+
+### 🔹 Syntax
+
+```python
+lambda arguments: expression
+```
+
+The expression is evaluated and returned automatically.
 
 ---
-* A lambda function is a small anonymous function.
 
-* A lambda function can take any number of arguments, but can only have one expression.
->Syntax
-> 
-> lambda arguments : expression
-* The expression is executed and the result is returned
-```python
-x = lambda a : a + 10
-print(x(5))
-```
-* Lambda functions can take any number of arguments.
-```python
-x = lambda a, b : a * b
-print(x(5, 6))
-```
-### Why Use Lambda Functions?
-The power of lambda is better shown when you use them as an anonymous function inside another function.
-```python
-def myfunc(n):
-  return lambda a : a * n
+### 🔹 Example 1: Basic lambda
 
-mydoubler = myfunc(2)
-
-print(mydoubler(11))
+```python
+square = lambda x: x * x
+print(square(5))  # 25
 ```
 
+---
+
+### 🔹 Example 2: Lambda with multiple arguments
+
+```python
+add = lambda a, b: a + b
+print(add(3, 4))  # 7
+```
+
+---
+
+### 🔹 Example 3: Using lambda with `map()`
+
+```python
+nums = [1, 2, 3, 4]
+squared = map(lambda x: x**2, nums)
+print(list(squared))  # [1, 4, 9, 16]
+```
+
+---
+
+### 🔹 Example 4: Using lambda with `filter()`
+
+```python
+nums = [1, 2, 3, 4, 5]
+evens = filter(lambda x: x % 2 == 0, nums)
+print(list(evens))  # [2, 4]
+```
+
+---
+
+### 🔹 Example 5: Using lambda with `sorted()`
+
+```python
+data = [(1, 'b'), (3, 'a'), (2, 'c')]
+sorted_data = sorted(data, key=lambda x: x[1])
+print(sorted_data)  # [(3, 'a'), (1, 'b'), (2, 'c')]
+```
