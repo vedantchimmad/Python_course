@@ -1,129 +1,114 @@
-# Modules
+# 📦 Python Modules
+
+Modules in Python are files containing Python code (functions, classes, variables) that can be imported and reused in other Python programs.
+
+They help organize code logically and promote reusability.
 
 ---
-### What is a Module?
-* Consider a module to be the same as a code library.
-* A module is a Collection of functions, classes, variables, constants or any other Python object. 
 
-### Create a Module
-To create a module just save the code you want in a file with the file extension `.py`.
+### 🔹 What is a Module?
+
+A **module** is simply a `.py` file that can be imported using the `import` statement.
+
+For example, if you have a file `math_utils.py`, you can import it as a module.
+
+---
+
+### 🔹 Creating a Module
+
 ```python
-def greeting(name):
-  print("Hello, " + name)
+# File: mymodule.py
+def greet(name):
+    return f"Hello, {name}!"
 ```
-### Use a Module
-Now we can use the module we just created, by using the import statement.
-```python
-import mymodule
 
-mymodule.greeting("vedant")
-```
->[!NOTE]
-> 
-> When using a function from a module, use the syntax: module_name.function_name.
+---
 
-### Variables in Module
-The module can contain functions, as already described, but also variables of all types (arrays, dictionaries, objects etc)
-```python
-person1 = {
-  "name": "Vedant",
-  "age": 25,
-  "country": "India"
-}
-```
-Import the module named mymodule, and access the person1 dictionary
-```python
-import mymodule
-
-a = mymodule.person1["age"]
-print(a)
-```
-### Naming a Module
-You can name the module file whatever you like, but it must have the file extension `.py`
-
-### Re-naming a Module
-You can create an alias when you import a module, by using the `as` keyword
-```python
-import mymodule as mx
-
-a = mx.person1["age"]
-print(a)
-```
-### Import From Module
-You can choose to import only parts from a module, by using the `from` keyword.
-
-The module named mymodule has one function and one dictionary
-```python
-def greeting(name):
-  print("Hello, " + name)
-
-person1 = {
-  "name": "vedant",
-  "age": 25,
-  "country": "India"
-}
-```
-```python
-from mymodule import person1
-
-print (person1["age"])
-```
->[!NOTE]
-> 
-> When importing using the from keyword, do not use the module name when referring to elements in the module. Example: person1["age"], ~~not mymodule.person1["age"]~~
-
-## Module Attributes
-A module is an object of module class, and hence it is characterized by attributes.
-* `__file__` returns the physical name of the module.
-
-* `__package__` returns the package to which the module belongs.
-
-* `__doc__` returns the docstring at the top of the module if any
-
-* `__dict__` returns the entire scope of the module
-
-* `__name__` returns the name of the module
+### 🔹 Importing a Module
 
 ```python
 import mymodule
 
-print ("__file__ attribute:", mymodule.__file__)
-print ("__doc__ attribute:", mymodule.__doc__)
-print ("__name__ attribute:", mymodule.__name__)
+print(mymodule.greet("Vedant"))  # Hello, Vedant!
 ```
-## The __name__Attribute
-In an interactive shell, __name__ attribute returns '__main__'
-```python
-print ("__name__ attribute within a script:", __name__)
-```
-```python
-def sum(x,y):
-   return x+y
 
-if __name__ == "__main__":
-   print ("sum:",sum(10,20))
-```
-## Import classes in Module
-```python
-# A module
-class Morning:
-   def greet(self):
-       print("Hello Good morning from A")
-```
-```python
-# B Module
-class Afternoon:
-    def greet(self):
-      print("Hello Good Afternoon from B")
-```
-```python
-# Collection of AB module
-import A
-import B 
+---
 
-obj1 = A.Morning()
-obj1.greet()
+### 🔹 Importing Specific Items
 
-obj2=B.Afternoon()
-obj2.greet()
+```python
+from mymodule import greet
+
+print(greet("World"))  # Hello, World!
 ```
+
+---
+
+### 🔹 Renaming a Module
+
+```python
+import mymodule as mm
+
+print(mm.greet("Friend"))  # Hello, Friend!
+```
+
+---
+
+### 🔹 Built-in Modules
+
+Python comes with many built-in modules like `math`, `random`, `datetime`.
+
+```python
+import math
+
+print(math.sqrt(16))  # 4.0
+```
+
+---
+
+### 🔹 Listing All Functions in a Module
+
+```python
+import math
+
+print(dir(math))
+```
+
+---
+
+### 🔹 Installing External Modules (Using pip)
+
+```bash
+pip install requests
+```
+
+```python
+import requests
+
+response = requests.get("https://example.com")
+print(response.status_code)
+```
+
+---
+
+### 🔹 Module Attributes
+
+Python modules have some built-in attributes:
+
+| Attribute      | Description                                     |
+|----------------|-------------------------------------------------|
+| `__name__`     | Name of the module                              |
+| `__file__`     | File path of the module                         |
+| `__doc__`      | The docstring defined in the module (if any)    |
+| `__package__`  | Package name the module belongs to              |
+
+```python
+# File: example.py
+print("Name:", __name__)
+print("File:", __file__)
+print("Doc:", __doc__)
+print("Package:", __package__)
+```
+
+> If a module is run directly, `__name__` will be `"__main__"`.
+
