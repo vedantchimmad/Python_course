@@ -1,56 +1,71 @@
-# Method overriding
+# 🔁 Method Overriding
 
 ---
-When a method in a subclass has the same name, same parameters or signature and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in the super-class.
+
+### 📌 Definition
+
+**Method Overriding** occurs when a **child class** provides a **specific implementation** of a method that is already defined in its **parent class**.
+
+- The method in the child class **must have the same name, parameters, and return type** as the method in the parent class.
+- It allows **runtime polymorphism** in Python.
+
+---
+
+### 🧠 Key Points
+
+- Used to **customize or extend** the behavior of the inherited method.
+- Only the method in the **child class** is executed when called through the child class object.
+- Python allows overriding using simple redefinition.
+
+---
+
+### 💡 Example: Method Overriding in Python
+
 ```python
- 
-# Defining parent class 
-class Parent(): 
-      
-    # Constructor 
-    def __init__(self): 
-        self.value = "Inside Parent"
-          
-    # Parent's show method 
-    def show(self): 
-        print(self.value) 
-          
-# Defining child class 
-class Child(Parent): 
-      
-    # Constructor 
-    def __init__(self): 
-        self.value = "Inside Child"
-          
-    # Child's show method 
-    def show(self): 
-        print(self.value) 
-          
-          
-# Driver's code 
-obj1 = Parent() 
-obj2 = Child() 
-  
-obj1.show() 
-obj2.show() 
+class Animal:
+    def sound(self):
+        print("Some generic animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+
+# Creating objects
+animal = Animal()
+dog = Dog()
+cat = Cat()
+
+animal.sound()  # Output: Some generic animal sound
+dog.sound()     # Output: Bark
+cat.sound()     # Output: Meow
 ```
-### Using supper()
+### 🔎 Accessing Parent Method from Child Class
+If you still want to use the parent class method inside the child class, use super():
 ```python
-class Parent(): 
-      
-    def show(self): 
-        print("Inside Parent") 
-          
-class Child(Parent): 
-      
-    def show(self): 
-          
-        # Calling the parent's class 
-        # method 
-        super().show() 
-        print("Inside Child") 
-          
-# Driver's code 
-obj = Child() 
-obj.show() 
+class Animal:
+    def sound(self):
+        print("Some generic animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        super().sound()
+        print("Bark")
+
+d = Dog()
+d.sound()
+# Output:
+# Some generic animal sound
+# Bark
+
 ```
+### 📎 Summary
+| Feature          | Description                                   |
+| ---------------- | --------------------------------------------- |
+| Concept          | Redefining parent class method in child class |
+| Purpose          | Customize behavior of inherited method        |
+| Accessing parent | Use `super()` inside child class              |
+| Achieves         | Runtime Polymorphism                          |
