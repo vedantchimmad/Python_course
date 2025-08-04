@@ -1,192 +1,194 @@
-# Inheritance
+# 🧬 Inheritance in Python
+
+Inheritance allows a class (child class) to inherit attributes and methods from another class (parent class). This promotes code reusability and simplifies code maintenance.
 
 ---
-Inheritance allows us to define a class that inherits all the methods and properties from another class.
-* `Parent` class is the class being inherited from, also called base class.
-* `Child` class is the class that inherits from another class, also called derived class.
-### Create a Parent Class
-Any class can be a parent class, so the syntax is the same as creating any other class.
+
+## 🔑 Key Concepts
+
+| Term             | Description                                                            |
+| ---------------- | ---------------------------------------------------------------------- |
+| **Parent Class** | The class being inherited from (also called base or superclass)        |
+| **Child Class**  | The class that inherits from another class (also called derived class) |
+
+---
+
+## 🛠 Syntax
+
 ```python
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
+class Parent:
+    # parent class code
 
-  def printname(self):
-    print(self.firstname, self.lastname)
-
-#Use the Person class to create an object, and then execute the printname method:
-
-x = Person("John", "Doe")
-x.printname()
+class Child(Parent):
+    # child class code
 ```
-### Create a Child Class
-To create a class that inherits the functionality from another class, send the parent class as a parameter when creating the child class
+
+---
+
+## ✅ Example
+
 ```python
-class Student(Person):
-  pass
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()   # Inherited from Animal
+d.bark()    # Defined in Dog
 ```
-### the __init__() Function
-* We want to add the `__init__()` function to the child class (instead of the pass keyword).
-* When you add the `__init__()` function, the child class will no longer inherit the parent's `__init__()` function.
->[!NOTE]
-> 
-> When you add the `__init__()` function, the child class will no longer inherit the parent's `__init__()` function.
-* To keep the inheritance of the parent's `__init__()` function, add a call to the parent's __init__() function:
+
+---
+
+## 🯩 Types of Inheritance
+
+### 1. Single Inheritance
+
+One child inherits from one parent.
+
 ```python
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
+class Parent:
+    def func1(self):
+        print("Function in Parent")
 
-  def printname(self):
-    print(self.firstname, self.lastname)
+class Child(Parent):
+    def func2(self):
+        print("Function in Child")
 
-class Student(Person):
-  def __init__(self, fname, lname):
-    Person.__init__(self, fname, lname)
-
-x = Student("Mike", "Olsen")
-x.printname()
+c = Child()
+c.func1()
+c.func2()
 ```
-### Use the super() Function
-Python also has a `super()` function that will make the child class inherit all the methods and properties from its parent
-```python
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
 
-  def printname(self):
-    print(self.firstname, self.lastname)
+---
 
-class Student(Person):
-  def __init__(self, fname, lname):
-    super().__init__(fname, lname)
-
-x = Student("Mike", "Olsen")
-x.printname()
-```
->[!NOTE]
-> 
-> By using the `super()` function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its parent.
-### Add Methods
-If you add a method in the child class with the same name as a function in the parent class, the inheritance of the parent method will be overridden.
-```python
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-
-  def printname(self):
-    print(self.firstname, self.lastname)
-
-class Student(Person):
-  def __init__(self, fname, lname, year):
-    super().__init__(fname, lname)
-    self.graduationyear = year
-
-  def welcome(self):
-    print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
-
-x = Student("Mike", "Olsen", 2019)
-x.welcome()
-
-```
-## Importance of Inheritance
-* Code Re-usability
-* Avoid Duplication
-
-## Types of Inheritance
-* **Single Inheritance**
-* **Multilevel Inheritance**
-* * **Hierarchical Inheritance**: 
-* * **Multiple Inheritance**: 
-* ### 1. Single level Inheritance
-* Single-level inheritance enables a derived class to inherit characteristics from a single-parent class.
-```python
-class A:
-    x,y=10,20
-    def m1(self):
-        print(self.x+self.y)
-
-class B(A):
-    a,b=200,100
-    def m2(self):
-        print(self.a-self.b)
-
-bobj=B()
-bobj.m1() # 30
-bobj.m2() # 100
-```
 ### 2. Multilevel Inheritance
-* Multi-level inheritance enables a derived class to inherit properties from an immediate parent class which in turn inherits properties from his parent class.
+
+A class inherits from a child class which itself inherits from another parent class.
+
+```python
+class Grandparent:
+    def func1(self):
+        print("Grandparent")
+
+class Parent(Grandparent):
+    def func2(self):
+        print("Parent")
+
+class Child(Parent):
+    def func3(self):
+        print("Child")
+
+c = Child()
+c.func1()
+c.func2()
+c.func3()
+```
+
+---
+
+### 3. Multiple Inheritance
+
+A child inherits from more than one parent class.
+
+```python
+class Father:
+    def house(self):
+        print("House from Father")
+
+class Mother:
+    def jewelry(self):
+        print("Jewelry from Mother")
+
+class Child(Father, Mother):
+    pass
+
+c = Child()
+c.house()
+c.jewelry()
+```
+
+---
+
+### 4. Hierarchical Inheritance
+
+Multiple child classes inherit from a single parent class.
+
+```python
+class Parent:
+    def show(self):
+        print("Parent class")
+
+class Child1(Parent):
+    def child1_method(self):
+        print("Child1")
+
+class Child2(Parent):
+    def child2_method(self):
+        print("Child2")
+
+c1 = Child1()
+c2 = Child2()
+c1.show()
+c2.show()
+```
+
+---
+
+### 5. Hybrid Inheritance
+
+Combination of two or more types of inheritance.
+
 ```python
 class A:
-    x,y=10,20
-    def m1(self):
-        print(self.x+self.y)
+    def func1(self):
+        print("A")
 
 class B(A):
-    a,b=200,100
-    def m2(self):
-        print(self.a-self.b)
+    def func2(self):
+        print("B")
 
-class C(B):
-    i,j=5,2
-    def m3(self):
-        print(self.i*self.j)
-cobj=C()
-cobj.m1() # 30
-cobj.m2() # 100
-cobj.m3()  #10
+class C:
+    def func3(self):
+        print("C")
+
+class D(B, C):
+    def func4(self):
+        print("D")
+
+d = D()
+d.func1()
+d.func2()
+d.func3()
+d.func4()
 ```
-### 3. Hierarchical-level inheritance
-* Hierarchical-level inheritance enables more than one derived class to inherit properties from a parent class.
+
+---
+
+## 🧐 Method Overriding
+
+When a child class redefines a method from the parent class.
+
 ```python
-class A:
-    x,y=10,20
-    def m1(self):
-        print(self.x+self.y)
+class Animal:
+    def sound(self):
+        print("Animal sound")
 
-class B(A):
-    a,b=200,100
-    def m2(self):
-        print(self.a-self.b)
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
 
-class C(A):
-    i,j=5,2
-    def m3(self):
-        print(self.i*self.j)
-
-bobj=B()
-bobj.m1()  # 30
-bobj.m2() # 100
-
-cobj=C()
-cobj.m1() # 30
-cobj.m3()  #10
+c = Cat()
+c.sound()
 ```
-### 4. Multiple-level inheritance
-* Multiple-level inheritance enables one derived class to inherit properties from more than one base class.
-```python
-class A:
-    x,y=10,20
-    def m1(self):
-        print(self.x+self.y)
 
-class B:
-    a,b=200,100
-    def m2(self):
-        print(self.a-self.b)
+---
 
-class C(A,B):
-    i,j=5,2
-    def m3(self):
-        print(self.i*self.j)
+## 📌 Notes
 
-cobj=C()
-cobj.m1() # 30
-cobj.m2() #100
-cobj.m3() # 10
-```
+* Use `super()` to call methods from the parent class inside the child.
+* Helps in **code reusability** and **readability**.
+* Ensures **extensibility** and **modularity** in OOP.
