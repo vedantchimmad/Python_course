@@ -1,27 +1,51 @@
-# Method Overloading
+# 🔁 Method Overloading
 
 ---
-When you have a class with method of one name defined more than one but with different argument types and/or return type, it is a case of method overloading.
->[!NOTE]
-> 
-> Python doesn't support this mechanism method overloading
 
-* However, we can use dispatch function from a third party module named MultipleDispatch for this purpose.
->pip install multipledispatch
+### 📌 Definition
+
+**Method Overloading** refers to the ability to define multiple methods with the same name but different sets of parameters (type or number of arguments).
+
+> **⚠️ Note**  
+> Python **does not support** traditional method overloading like some other languages (e.g., Java or C++).
+
+---
+
+### 🔹 Why It Doesn't Work in Python?
+
+In Python, if you define a method multiple times in the same class, only the **last definition** will be used. Earlier ones are overwritten.
+
+---
+
+### ✅ Workaround: Using `multipledispatch`
+
+Python supports **function overloading** using the external package [`multipledispatch`](https://pypi.org/project/multipledispatch/).
+
+#### 🛠 Install the package
+
+```bash
+pip install multipledispatch
+```
+### 💡 Example: Method Overloading with dispatch
 ```python
 from multipledispatch import dispatch
-class example:
-   @dispatch(int, int)
-   def add(self, a, b):
-      x = a+b
-      return x
-   @dispatch(int, int, int)
-   def add(self, a, b, c):
-      x = a+b+c
-      return x
 
-obj = example()
+class Example:
+    @dispatch(int, int)
+    def add(self, a, b):
+        return a + b
 
-print (obj.add(10,20,30))
-print (obj.add(10,20))
+    @dispatch(int, int, int)
+    def add(self, a, b, c):
+        return a + b + c
+
+obj = Example()
+
+print(obj.add(10, 20))       # Output: 30
+print(obj.add(10, 20, 30))   # Output: 60
+
 ```
+### 📎 Summary
+* ✅ Python supports overloading through multipledispatch.
+* ❌ Native Python method overloading is not available.
+* 👍 Use @dispatch decorator to create clean, overload-like behavior.
