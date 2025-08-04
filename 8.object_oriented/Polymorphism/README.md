@@ -1,41 +1,74 @@
-# Polymorphism
+# 🔄 Polymorphism in Python
 
 ---
-The word "polymorphism" means "many forms", and in programming it refers to methods/functions/operators with the same name that can be executed on many objects or classes.
 
-Ex : An example of a Python function that can be used on different objects is the `len()` function.
-### Class Polymorphism
-* Polymorphism is often used in Class methods, where we can have multiple classes with the same method name.
-* For example, say we have three classes: `Car`, `Boat`, and `Plane`, and they all have a method called `move()`
+### 📌 Definition
+
+**Polymorphism** means "many forms". In object-oriented programming, polymorphism allows the same interface (method or operator) to behave differently depending on the object using it.
+
+---
+
+### 🧠 Key Concepts
+
+- **Compile-time Polymorphism** (not natively supported in Python):
+    - Achieved via **method overloading**.
+    - Python doesn’t support it directly; can be mimicked using default arguments or `multipledispatch`.
+
+- **Run-time Polymorphism** (fully supported in Python):
+    - Achieved through **method overriding**.
+    - Child class provides a specific implementation of a method already defined in the parent class.
+
+---
+
+### ✅ Example: Polymorphism with Functions and Objects
+
 ```python
-class Car:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
+class Cat:
+    def speak(self):
+        print("Meow")
 
-  def move(self):
-    print("Drive!")
+class Dog:
+    def speak(self):
+        print("Bark")
 
-class Boat:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
+def animal_sound(animal):
+    animal.speak()
 
-  def move(self):
-    print("Sail!")
+cat = Cat()
+dog = Dog()
 
-class Plane:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
-
-  def move(self):
-    print("Fly!")
-
-car1 = Car("Ford", "Mustang")       #Create a Car class
-boat1 = Boat("Ibiza", "Touring 20") #Create a Boat class
-plane1 = Plane("Boeing", "747")     #Create a Plane class
-
-for x in (car1, boat1, plane1):
-  x.move()
+animal_sound(cat)  # Output: Meow
+animal_sound(dog)  # Output: Bark
 ```
+### 🔁 Example: Polymorphism with Inheritance
+```python
+class Bird:
+    def intro(self):
+        print("There are many types of birds.")
+
+    def flight(self):
+        print("Most birds can fly.")
+
+class Sparrow(Bird):
+    def flight(self):
+        print("Sparrows can fly.")
+
+class Ostrich(Bird):
+    def flight(self):
+        print("Ostriches cannot fly.")
+
+obj_bird = Bird()
+obj_sparrow = Sparrow()
+obj_ostrich = Ostrich()
+
+obj_bird.flight()     # Output: Most birds can fly.
+obj_sparrow.flight()  # Output: Sparrows can fly.
+obj_ostrich.flight()  # Output: Ostriches cannot fly.
+
+```
+### 📎 Summary
+| Type         | Description                                              |
+| ------------ | -------------------------------------------------------- |
+| Compile-time | Method overloading (not directly supported in Python)    |
+| Run-time     | Method overriding (fully supported in Python)            |
+| Key benefit  | Enables generic code to work with different object types |
