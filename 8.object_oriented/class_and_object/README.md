@@ -1,169 +1,218 @@
-# Class and Object
+# 🧱 Python: Class and Object
 
 ---
-* A Class is a "blueprint" for creating objects.
-* Class contains collection of variables(attributes) & methods(behavior)
-* Class is a Logical entity
-* Class Does not occupy space in the memory
 
-### Create a Class
-To create a class, use the keyword `class`
+## 🧾 What is a Class?
+
+* A **class** is a blueprint for creating objects.
+* It defines attributes (variables) and behaviors (methods).
+* Logical entity — **does not occupy memory** on its own.
+
+### 📌 Syntax
+
 ```python
 class MyClass:
-  x = 5
+    x = 5
 ```
-### Create Object
-* Now we can use the class named MyClass to create objects.
-* object is an instance of class
-* Object is a Physical entity
-* Occupy certain amount space in the memory
-* For one class, we can create multiple objects.
+
+---
+
+## 🧍 What is an Object?
+
+* An **object** is an instance of a class.
+* Physical entity — **occupies memory**.
+* Multiple objects can be created from one class.
+
+### 📌 Create an Object
 
 ```python
 p1 = MyClass()
 print(p1.x)
 ```
-### The __init__() Function
-* All classes have a function called __init__(), which is always executed when the class is being initiated.
-* `__init__()` is called as constructor
-* constructor will not return any value
+
+---
+
+## 🔧 The `__init__()` Method (Constructor)
+
+* Automatically called when an object is created.
+* Used to initialize object properties.
+* Does **not return** any value.
+
 ```python
 class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
 p1 = Person("Vedant", 25)
-
 print(p1.name)
 print(p1.age)
 ```
->[!NOTE]
-> 
-> The __init__() function is called automatically every time the class is being used to create a new object.
-### The __str__() Function
-* The __str__() function controls what should be returned when the class object is represented as a string.
-* If the __str__() function is not set, the string representation of the object is returned.
+
+> 🧠 `__init__()` runs automatically when an object is instantiated.
+
+---
+
+## 📜 The `__str__()` Method
+
+* Controls the **string representation** of the object.
+* If not defined, default memory address is returned.
+
 ```python
 class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-  def __str__(self):
-    return f"{self.name}({self.age})"
+    def __str__(self):
+        return f"{self.name} ({self.age})"
 
 p1 = Person("John", 36)
-
 print(p1)
 ```
-### Object Methods
-Objects can also contain methods. Methods in objects are functions that belong to the object.
+
+---
+
+## 🧩 Object Methods
+
+* Methods are functions defined inside a class.
+* Use `self` to access instance attributes.
+
 ```python
 class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-  def myfunc(self):
-    print("Hello my name is " + self.name)
+    def greet(self):
+        print(f"Hello, my name is {self.name}!")
 
 p1 = Person("John", 36)
-p1.myfunc()
+p1.greet()
 ```
->[!NOTE]
-> 
-> The `self` parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.
-### The self Parameter
-* The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
 
-* It does not have to be named self , you can call it whatever you like, but it has to be the first parameter of any function in the class
+---
+
+## 🔁 The `self` Parameter
+
+* Refers to the **current instance** of the class.
+* Can be named anything, but `self` is the convention.
+
 ```python
 class Person:
-  def __init__(mysillyobject, name, age):
-    mysillyobject.name = name
-    mysillyobject.age = age
+    def __init__(instance, name, age):
+        instance.name = name
+        instance.age = age
 
-  def myfunc(abc):
-    print("Hello my name is " + abc.name)
+    def greet(obj):
+        print(f"Hi, I'm {obj.name}.")
 
-p1 = Person("John", 36)
-p1.myfunc()
+p1 = Person("Alice", 28)
+p1.greet()
 ```
-### Modify Object Properties
-You can modify properties on objects like this
+
+---
+
+## 🔧 Modify & Delete Properties
+
+### 📝 Modify Property
+
 ```python
 p1.age = 40
 ```
-### Delete Object Properties
-You can delete properties on objects by using the del keyword.
+
+### ❌ Delete Property
+
 ```python
 del p1.age
 ```
-### Delete Objects
-You can delete objects by using the `del` keyword
+
+### 🗑️ Delete Object
+
 ```python
 del p1
 ```
-### The pass Statement
-`class` definitions cannot be empty, but if you for some reason have a `class` definition with no content, put in the `pass` statement to avoid getting an error.
-```python
-class Person:
-  pass
-```
-## Methods
-* Functions are created inside a class
-### Types of methods
-1. Instance Methods
-2. Static Methods
 
-### 1.Instance Methods
-* Methods are called only through object
+---
+
+## ⛔ The `pass` Statement
+
+* Classes cannot be empty; use `pass` as a placeholder.
+
+```python
+class Dummy:
+    pass
+```
+
+---
+
+# ⚙️ Methods in Python
+
+## 1️⃣ Instance Methods
+
+* Called **on objects**.
+* Can access and modify object state.
+
 ```python
 class MyClass:
-    def myfun(self):
-        pass
-    def display(self,name):
+    def display(self, name):
         print(name)
 
-mc1=MyClass()
-mc1.myfun()
-mc1.display("Vedant")
+obj = MyClass()
+obj.display("Vedant")
 ```
-### 2.Static Methods
-* Methods are called directly using class
+
+## 2️⃣ Static Methods
+
+* Marked with `@staticmethod`.
+* Cannot access `self` or `cls`.
+* Called **using class name**.
+
 ```python
-class MyClass:
-    def m1(self):
-        print("this is instance method...")
+class Utility:
     @staticmethod
-    def m2(self,num):
-        print(self,num)
+    def add(a, b):
+        print(a + b)
 
-mc=MyClass()
-mc.m1()
-#calling Static method through object required additional arguments
-mc.m2(50,200) 
-
-MyClass.m2(10,20)
+Utility.add(10, 20)
 ```
-## Class Variable
-* Variable accessed within the class is called as class Variable
-* Access class variable using class instance
+
+> ⚠️ If called using an object, static methods require all arguments to be passed manually.
+
+---
+
+# 🧮 Class Variables vs Local vs Global
+
 ```python
- # global variables
-a,b=15,25  
-class MyClass:
-    # class variables
-    a,b=10,20  
-    def add(self,a,b):
-        # local varaibles
-        print(a+b)
-        # class variables
-        print(self.a+self.b)
-        # global variables
-        print(globals()['a']+globals()['b'])  
+# Global variables
+a, b = 15, 25
 
-mc=MyClass()
-mc.add(100,200)
+class MyClass:
+    # Class variables
+    a, b = 10, 20
+
+    def add(self, a, b):  # Local variables
+        print("Local:", a + b)
+        print("Class:", self.a + self.b)
+        print("Global:", globals()['a'] + globals()['b'])
+
+obj = MyClass()
+obj.add(100, 200)
 ```
+
+---
+
+🟩 **Summary**
+
+| Term            | Description                           |
+| --------------- | ------------------------------------- |
+| Class           | Blueprint for creating objects        |
+| Object          | Instance of a class                   |
+| `__init__`      | Constructor; initializes object state |
+| `__str__`       | String representation of an object    |
+| Instance Method | Operates on object (`self`)           |
+| Static Method   | No access to object or class          |
+| Class Variable  | Shared across all instances           |
+| `self`          | Refers to the instance of the class   |
+
+---
